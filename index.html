@@ -41,6 +41,60 @@
     color: var(--text);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(28, 74, 96, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    max-width: 1028px;
+    margin: 0 auto;
+    padding: 14px 24px;
+  }
+
+  .nav-logo {
+    display: block;
+    width: 150px;
+    height: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--brand-dark);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;
@@ -113,6 +167,33 @@
     padding: 40px 24px;
   }
 
+  .content-section {
+    padding: 72px 24px;
+  }
+
+  .content-section:nth-of-type(even) {
+    background: #f7f8f9;
+  }
+
+  .content-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .content-section h2 {
+    color: var(--brand);
+    font-size: clamp(28px, 5vw, 42px);
+    margin: 0 0 16px;
+  }
+
+  .content-section p {
+    max-width: 680px;
+    color: var(--text-muted);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
   .services-inner {
     max-width: 980px;
     margin: 0 auto;
@@ -163,6 +244,19 @@
   }
 
   @media (max-width: 900px) {
+    .site-nav {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .nav-links {
+      width: 100%;
+      gap: 20px;
+      padding-bottom: 4px;
+      overflow-x: auto;
+    }
+
     .services-grid {
       grid-template-columns: 1fr;
       gap: 32px;
@@ -221,14 +315,29 @@
 <body>
   <h1 class="sr-only">Bashkaran Real Estate</h1>
 
-  <section class="hero">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="#home" aria-label="Bashkaran Real Estate – Home">
+        <img class="nav-logo" src="assets/logo.png" alt="Bashkaran Real Estate">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#dienstleistungen">Dienstleistungen</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
     <div class="hero-card">
       <img class="logo" src="assets/logo.png" alt="Bashkaran Real Estate Logo">
       <a class="contact-btn" href="mailto:info@bashkaran.ch">Kontakt aufnehmen</a>
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" id="dienstleistungen">
     <div class="services-inner">
       <div class="services-grid">
         <div class="service">
@@ -250,7 +359,21 @@
     </div>
   </section>
 
-  <footer>
+  <section class="content-section" id="portfolio">
+    <div class="content-inner">
+      <h2>Portfolio</h2>
+      <p>Ausgewählte Mandate und Referenzen aus unserer Immobilienarbeit veröffentlichen wir in Kürze.</p>
+    </div>
+  </section>
+
+  <section class="content-section" id="ueber-uns">
+    <div class="content-inner">
+      <h2>Über uns</h2>
+      <p>Bashkaran Real Estate steht für persönliche, regionale und zuverlässige Immobilienbetreuung im Berner Oberland.</p>
+    </div>
+  </section>
+
+  <footer id="kontakt">
     <div class="footer-inner">
       <img class="footer-logo" src="assets/logo.png" alt="Bashkaran Real Estate">
       <p class="footer-label">Rufen Sie uns an</p>
