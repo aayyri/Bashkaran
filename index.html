@@ -138,6 +138,10 @@
     transform: translateY(-7px) rotate(-45deg);
   }
 
+  body.menu-open {
+    overflow: hidden;
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;
@@ -291,6 +295,10 @@
   }
 
   @media (max-width: 900px) {
+    .site-header {
+      backdrop-filter: none;
+    }
+
     .site-nav {
       position: relative;
       flex-direction: row;
@@ -299,28 +307,31 @@
     }
 
     .menu-toggle {
+      position: relative;
+      z-index: 201;
       display: inline-flex;
+    }
+
+    .site-nav > a {
+      position: relative;
+      z-index: 201;
     }
 
     .nav-links {
       display: flex;
-      position: absolute;
-      top: calc(100% + 1px);
-      right: 24px;
-      left: 24px;
+      position: fixed;
+      z-index: 200;
+      inset: 0;
       flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
-      padding: 16px;
-      border: 1px solid rgba(28, 74, 96, 0.12);
-      border-radius: 16px;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      padding: 110px 24px 48px;
       background: #ffffff;
-      box-shadow: 0 16px 40px rgba(20, 40, 50, 0.15);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transform: translateY(-10px) scale(0.98);
-      transform-origin: top center;
+      transform: translateY(-18px);
       transition: opacity 0.2s ease, transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.24s;
     }
 
@@ -328,11 +339,13 @@
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
     }
 
     .nav-links a {
       text-align: center;
+      font-size: 24px;
+      line-height: 1.25;
     }
 
     .services-grid {
@@ -498,6 +511,7 @@
 
     menuToggle.addEventListener('click', () => {
       const isOpen = mainMenu.classList.toggle('is-open');
+      document.body.classList.toggle('menu-open', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
       menuToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
     });
@@ -505,6 +519,7 @@
     mainMenu.addEventListener('click', (event) => {
       if (event.target.closest('a')) {
         mainMenu.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.setAttribute('aria-label', 'Menü öffnen');
       }
