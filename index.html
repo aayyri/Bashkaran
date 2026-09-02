@@ -231,10 +231,15 @@
     margin: 0 auto;
   }
 
-  .content-section h2 {
+  .section-title {
     color: var(--brand);
-    font-size: clamp(28px, 5vw, 42px);
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 500;
     margin: 0 0 16px;
+  }
+
+  .services .section-title {
+    margin-bottom: 28px;
   }
 
   .content-section p {
@@ -431,6 +436,7 @@
 
   <section class="services" id="dienstleistungen">
     <div class="services-inner">
+      <h2 class="section-title">Dienstleistungen</h2>
       <div class="services-grid">
         <div class="service">
           <h3>Verwaltung</h3>
@@ -453,14 +459,14 @@
 
   <section class="content-section" id="portfolio">
     <div class="content-inner">
-      <h2>Portfolio</h2>
+      <h2 class="section-title">Portfolio</h2>
       <p>Ausgewählte Mandate und Referenzen aus unserer Immobilienarbeit veröffentlichen wir in Kürze.</p>
     </div>
   </section>
 
   <section class="content-section" id="ueber-uns">
     <div class="content-inner">
-      <h2>Über uns</h2>
+      <h2 class="section-title">Über uns</h2>
       <p>Bashkaran Real Estate steht für persönliche, regionale und zuverlässige Immobilienbetreuung im Berner Oberland.</p>
     </div>
   </section>
