@@ -81,18 +81,46 @@
   }
 
   .nav-links a {
-    color: var(--brand-dark);
+    display: block;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #ffffff;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
+    transition: background 0.2s ease, transform 0.15s ease;
   }
 
   .nav-links a:hover,
   .nav-links a:focus-visible {
-    color: var(--brand);
-    text-decoration: underline;
-    text-underline-offset: 5px;
+    background: var(--brand-dark);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .menu-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2;
   }
 
   .sr-only {
@@ -133,12 +161,16 @@
       url("assets/hero.jpg") center / cover no-repeat;
   }
 
-  .logo {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-    display: block;
-    filter: brightness(0) invert(1);
+  .hero-title {
+    max-width: 680px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    text-shadow: 0 2px 8px rgba(8, 24, 32, 0.22);
   }
 
   .contact-btn {
@@ -245,16 +277,38 @@
 
   @media (max-width: 900px) {
     .site-nav {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 14px;
+      position: relative;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menu-toggle {
+      display: inline-flex;
     }
 
     .nav-links {
-      width: 100%;
-      gap: 20px;
-      padding-bottom: 4px;
-      overflow-x: auto;
+      display: none;
+      position: absolute;
+      top: calc(100% + 1px);
+      right: 24px;
+      left: 24px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 16px;
+      border: 1px solid rgba(28, 74, 96, 0.12);
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 16px 40px rgba(20, 40, 50, 0.15);
+    }
+
+    .nav-links.is-open {
+      display: flex;
+    }
+
+    .nav-links a {
+      text-align: center;
     }
 
     .services-grid {
@@ -313,14 +367,17 @@
 </style>
 </head>
 <body>
-  <h1 class="sr-only">Bashkaran Real Estate</h1>
-
   <header class="site-header">
     <nav class="site-nav" aria-label="Hauptnavigation">
       <a href="#home" aria-label="Bashkaran Real Estate – Home">
         <img class="nav-logo" src="assets/logo.png" alt="Bashkaran Real Estate">
       </a>
-      <ul class="nav-links">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+      <ul class="nav-links" id="main-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#dienstleistungen">Dienstleistungen</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
@@ -332,7 +389,7 @@
 
   <section class="hero" id="home">
     <div class="hero-card">
-      <img class="logo" src="assets/logo.png" alt="Bashkaran Real Estate Logo">
+      <h1 class="hero-title">Persönlich an Ihrer Seite. Stark für Ihre Immobilie.</h1>
       <a class="contact-btn" href="mailto:info@bashkaran.ch">Kontakt aufnehmen</a>
     </div>
   </section>
@@ -412,6 +469,24 @@
       "addressCountry": "CH"
     }
   }
+  </script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainMenu = document.querySelector('#main-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    });
+
+    mainMenu.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        mainMenu.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Menü öffnen');
+      }
+    });
   </script>
 </body>
 </html>
