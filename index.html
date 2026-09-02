@@ -110,13 +110,32 @@
     cursor: pointer;
   }
 
-  .menu-toggle svg {
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .menu-icon span {
+    display: block;
     width: 22px;
-    height: 22px;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-width: 2;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .sr-only {
@@ -284,7 +303,7 @@
     }
 
     .nav-links {
-      display: none;
+      display: flex;
       position: absolute;
       top: calc(100% + 1px);
       right: 24px;
@@ -297,10 +316,19 @@
       border-radius: 16px;
       background: #ffffff;
       box-shadow: 0 16px 40px rgba(20, 40, 50, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-10px) scale(0.98);
+      transform-origin: top center;
+      transition: opacity 0.2s ease, transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.24s;
     }
 
     .nav-links.is-open {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
     }
 
     .nav-links a {
@@ -369,9 +397,7 @@
         <img class="nav-logo" src="assets/logo.png" alt="Bashkaran Real Estate">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Menü öffnen">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16"></path>
-        </svg>
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <ul class="nav-links" id="main-menu">
         <li><a href="#home">Home</a></li>
