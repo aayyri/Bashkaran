@@ -167,8 +167,7 @@
     display: flex;
     align-items: stretch;
     justify-content: center;
-    min-height: 85vh;
-    min-height: 85svh;
+    height: clamp(560px, calc(100svh - 120px), 680px);
     padding: 12px 24px 40px;
   }
 
@@ -185,13 +184,13 @@
     text-align: left;
     background:
       linear-gradient(180deg, rgba(10, 20, 30, 0.1) 0%, rgba(10, 20, 30, 0.4) 100%),
-      url("assets/hero.jpg") center 20% / cover no-repeat;
+      url("assets/hero.jpg") center 36% / cover no-repeat;
   }
 
   .hero-content {
     display: grid;
-    width: min(100%, 580px);
-    gap: 40px;
+    width: min(100%, 540px);
+    gap: 28px;
   }
 
   .hero-title {
@@ -222,7 +221,8 @@
 
   .contact-btn {
     display: block;
-    width: 100%;
+    width: fit-content;
+    min-width: 240px;
     background: #ffffff;
     color: var(--brand-dark);
     text-decoration: none;
@@ -330,6 +330,12 @@
   }
 
   @media (max-width: 900px) {
+    .hero {
+      height: auto;
+      min-height: 85vh;
+      min-height: 85svh;
+    }
+
     .site-nav {
       position: relative;
       flex-direction: row;
@@ -387,6 +393,11 @@
     .hero-card {
       justify-content: center;
       background-position: center, center top;
+    }
+
+    .contact-btn {
+      width: 100%;
+      min-width: 0;
     }
   }
 
