@@ -230,7 +230,7 @@
     font-weight: 600;
     font-size: 16px;
     padding: 16px 40px;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: background 0.2s ease, transform 0.15s ease;
   }
 
@@ -321,12 +321,144 @@
     font-weight: 600;
     font-size: 14px;
     padding: 12px 22px;
-    border-radius: 999px;
+    border-radius: 10px;
     transition: background 0.2s ease;
   }
 
   .service-btn:hover {
     background: var(--brand-dark);
+  }
+
+  .portfolio-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    gap: 0;
+    margin-top: 28px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f7f8f9;
+  }
+
+  .portfolio-gallery {
+    min-width: 0;
+    padding: 10px;
+    background: #edf1f2;
+  }
+
+  .portfolio-main-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+  }
+
+  .portfolio-main-image img,
+  .portfolio-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .portfolio-badge {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    right: 16px;
+    padding: 9px 13px;
+    border-radius: 8px;
+    background: var(--brand);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .portfolio-badge.is-rented {
+    background: var(--brand-dark);
+  }
+
+  .portfolio-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .portfolio-thumbnail {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+  }
+
+  .portfolio-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(32px, 5vw, 64px);
+  }
+
+  .portfolio-kicker {
+    margin: 0 0 10px;
+    color: var(--brand);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .portfolio-details h3 {
+    margin: 0 0 12px;
+    color: var(--text);
+    font-size: clamp(23px, 3vw, 32px);
+    line-height: 1.2;
+  }
+
+  .portfolio-location {
+    margin-bottom: 18px !important;
+    color: var(--brand) !important;
+    font-weight: 600;
+  }
+
+  .portfolio-description {
+    margin-bottom: 28px !important;
+  }
+
+  .portfolio-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .portfolio-facts li {
+    padding: 7px 10px;
+    border-radius: 7px;
+    background: #e7edef;
+    color: var(--brand-dark);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .portfolio-link {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 10px;
+    background: var(--brand);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .portfolio-link:hover {
+    background: var(--brand-dark);
+    transform: translateY(-1px);
   }
 
   @media (max-width: 900px) {
@@ -390,6 +522,14 @@
       gap: 32px;
     }
 
+    .portfolio-card {
+      grid-template-columns: 1fr;
+    }
+
+    .portfolio-details {
+      padding: 32px 24px 36px;
+    }
+
     .hero-card {
       justify-content: center;
       background-position: center, center top;
@@ -402,7 +542,7 @@
   }
 
   footer {
-    background: var(--brand-dark);
+    background: var(--brand);
     color: rgba(255, 255, 255, 0.7);
     text-align: left;
     padding: 40px 24px;
@@ -515,7 +655,63 @@
   <section class="content-section" id="portfolio" aria-labelledby="portfolio-title">
     <div class="content-inner">
       <h2 class="section-title" id="portfolio-title">Portfolio</h2>
-      <p>Wir begleiten Immobilienmandate im Berner Oberland mit persönlicher Beratung, sorgfältiger Koordination und einem klaren Blick für nachhaltige Lösungen.</p>
+      <article class="portfolio-card">
+        <div class="portfolio-gallery">
+          <a class="portfolio-main-image" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer" aria-label="Inserat der Wohnung in Matten bei Interlaken ansehen">
+            <span class="portfolio-badge">ZU VERMIETEN</span>
+            <img src="assets/portfolio/matten-wohnkueche.jpg" alt="Helle Wohnküche der Wohnung in Matten bei Interlaken" width="1467" height="1072" loading="lazy" decoding="async">
+          </a>
+          <div class="portfolio-thumbnails" aria-label="Weitere Bilder der Wohnung">
+            <a class="portfolio-thumbnail" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">
+              <img src="assets/portfolio/matten-aussenansicht.jpg" alt="Aussenansicht in Matten bei Interlaken" width="1320" height="980" loading="lazy" decoding="async">
+            </a>
+            <a class="portfolio-thumbnail" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">
+              <img src="assets/portfolio/matten-wohnraum.jpg" alt="Heller Wohnraum mit Holzverkleidung" width="1448" height="1086" loading="lazy" decoding="async">
+            </a>
+            <a class="portfolio-thumbnail" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">
+              <img src="assets/portfolio/matten-bad.jpg" alt="Badezimmer der Wohnung" width="1448" height="1086" loading="lazy" decoding="async">
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-details">
+          <p class="portfolio-kicker">Aktuelles Mietangebot</p>
+          <h3>Wohnung in Matten bei Interlaken</h3>
+          <p class="portfolio-location">3800 Matten bei Interlaken</p>
+          <p class="portfolio-description">Wohnliches Ambiente mit viel Holz, hellen Dachräumen und schönem Blick in die Bergwelt.</p>
+          <a class="portfolio-link" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">Inserat ansehen</a>
+        </div>
+      </article>
+
+      <article class="portfolio-card">
+        <div class="portfolio-gallery">
+          <div class="portfolio-main-image">
+            <span class="portfolio-badge is-rented">VERMIETET</span>
+            <img src="assets/portfolio/moosseedorf-wohnbereich.jpg" alt="Heller Wohnbereich der vermieteten Maisonette-Wohnung in Moosseedorf" width="2000" height="1270" loading="lazy" decoding="async">
+          </div>
+          <div class="portfolio-thumbnails" aria-label="Weitere Bilder der vermieteten Wohnung">
+            <span class="portfolio-thumbnail">
+              <img src="assets/portfolio/moosseedorf-kueche.jpg" alt="Küche der Maisonette-Wohnung" width="2000" height="1304" loading="lazy" decoding="async">
+            </span>
+            <span class="portfolio-thumbnail">
+              <img src="assets/portfolio/moosseedorf-zimmer.jpg" alt="Zimmer mit Einbauschrank" width="2000" height="1270" loading="lazy" decoding="async">
+            </span>
+            <span class="portfolio-thumbnail">
+              <img src="assets/portfolio/moosseedorf-zimmer-hell.jpg" alt="Helles Zimmer mit Holzboden" width="2000" height="1270" loading="lazy" decoding="async">
+            </span>
+          </div>
+        </div>
+        <div class="portfolio-details">
+          <p class="portfolio-kicker">Erfolgreich vermittelt</p>
+          <h3>Duplex-/Maisonette-Wohnung in Moosseedorf</h3>
+          <p class="portfolio-location">3302 Moosseedorf</p>
+          <ul class="portfolio-facts" aria-label="Objektdaten">
+            <li>4½ Zimmer</li>
+            <li>100 m²</li>
+            <li>Maisonette / Duplex</li>
+          </ul>
+          <p class="portfolio-description">Erfolgreiche Vermietung einer grosszügigen Maisonette-Wohnung mit hellen Räumen und wohnlichem Ambiente.</p>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -603,7 +799,7 @@
       const isOpen = mainMenu.classList.toggle('is-open');
       document.body.classList.toggle('menu-open', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Menü schliessen' : 'Menü öffnen');
     });
 
     mainMenu.addEventListener('click', (event) => {
