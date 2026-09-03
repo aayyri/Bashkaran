@@ -3,26 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bashkaran Real Estate | Immobilienverwaltung &amp; Vermietung im Berner Oberland</title>
-<meta name="description" content="Bashkaran Real Estate – Ihr Partner für Immobilienverwaltung, Vermietung und Nachmietersuche im Berner Oberland. Persönlich, regional, zuverlässig.">
+<title>Immobilienverwaltung im Berner Oberland | Bashkaran Real Estate</title>
+<meta name="description" content="Persönliche Immobilienverwaltung, Vermietung und Nachmietersuche im Berner Oberland. Jetzt unverbindlich beraten lassen.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Bashkaran Real Estate">
+<meta name="theme-color" content="#135872">
 <link rel="canonical" href="https://bashkaran.ch/">
-<link rel="icon" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="191x191" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="preload" as="image" href="/assets/hero.jpg" fetchpriority="high">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bashkaran Real Estate">
-<meta property="og:title" content="Bashkaran Real Estate | Immobilienverwaltung & Vermietung">
-<meta property="og:description" content="Ihr Partner für Immobilienverwaltung, Vermietung und Nachmietersuche im Berner Oberland.">
+<meta property="og:title" content="Immobilienverwaltung im Berner Oberland | Bashkaran Real Estate">
+<meta property="og:description" content="Persönliche Immobilienverwaltung, Vermietung und Nachmietersuche im Berner Oberland.">
 <meta property="og:url" content="https://bashkaran.ch/">
 <meta property="og:image" content="https://bashkaran.ch/assets/hero.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="2268">
+<meta property="og:image:height" content="4140">
+<meta property="og:image:alt" content="Berglandschaft im Berner Oberland">
 <meta property="og:locale" content="de_CH">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bashkaran Real Estate">
-<meta name="twitter:description" content="Immobilienverwaltung, Vermietung und Nachmietersuche im Berner Oberland.">
+<meta name="twitter:title" content="Immobilienverwaltung im Berner Oberland | Bashkaran Real Estate">
+<meta name="twitter:description" content="Persönliche Immobilienverwaltung, Vermietung und Nachmietersuche im Berner Oberland.">
 <meta name="twitter:image" content="https://bashkaran.ch/assets/hero.jpg">
+<meta name="twitter:image:alt" content="Berglandschaft im Berner Oberland">
 <style>
   :root {
-    --brand: #1c4a60;
+    --brand: #135872;
     --brand-dark: #143845;
     --text: #22333a;
     --text-muted: #5a6b73;
@@ -189,6 +199,22 @@
     letter-spacing: -0.02em;
     text-wrap: balance;
     text-shadow: none;
+  }
+
+  .hero-intro {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+  }
+
+  .hero-subtitle {
+    max-width: 580px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 400;
+    line-height: 1.55;
+    text-wrap: balance;
   }
 
   .contact-btn {
@@ -394,6 +420,7 @@
   }
 
   .footer-meta {
+    font-style: normal;
     font-size: 12px;
     color: rgba(255, 255, 255, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -401,13 +428,19 @@
     padding-top: 16px;
     line-height: 2.2;
   }
+
+  .footer-copyright {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+  }
 </style>
 </head>
 <body>
   <header class="site-header">
     <nav class="site-nav" aria-label="Hauptnavigation">
       <a href="#home" aria-label="Bashkaran Real Estate – Home">
-        <img class="nav-logo" src="assets/logo.png" alt="Bashkaran Real Estate">
+        <img class="nav-logo" src="assets/logo.png" alt="Bashkaran Real Estate" width="1722" height="429">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Menü öffnen">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -422,16 +455,20 @@
     </nav>
   </header>
 
-  <section class="hero" id="home">
+  <main>
+  <section class="hero" id="home" aria-labelledby="hero-title">
     <div class="hero-card">
-      <h1 class="hero-title">Persönlich an Ihrer Seite. Stark für Ihre Immobilie.</h1>
-      <a class="contact-btn" href="mailto:info@bashkaran.ch">Kontakt aufnehmen</a>
+      <div class="hero-intro">
+        <h1 class="hero-title" id="hero-title">Persönlich an Ihrer Seite. Stark für Ihre Immobilie.</h1>
+        <p class="hero-subtitle">Immobilienverwaltung und Vermietung im Berner Oberland.</p>
+      </div>
+      <a class="contact-btn" href="mailto:info@bashkaran.ch?subject=Unverbindliche%20Immobilienberatung">Unverbindlich beraten lassen</a>
     </div>
   </section>
 
-  <section class="services" id="dienstleistungen">
+  <section class="services" id="dienstleistungen" aria-labelledby="dienstleistungen-title">
     <div class="services-inner">
-      <h2 class="section-title">Dienstleistungen</h2>
+      <h2 class="section-title" id="dienstleistungen-title">Dienstleistungen</h2>
       <div class="services-grid">
         <div class="service">
           <h3>Verwaltung</h3>
@@ -452,58 +489,87 @@
     </div>
   </section>
 
-  <section class="content-section" id="portfolio">
+  <section class="content-section" id="portfolio" aria-labelledby="portfolio-title">
     <div class="content-inner">
-      <h2 class="section-title">Portfolio</h2>
-      <p>Ausgewählte Mandate und Referenzen aus unserer Immobilienarbeit veröffentlichen wir in Kürze.</p>
+      <h2 class="section-title" id="portfolio-title">Portfolio</h2>
+      <p>Wir begleiten Immobilienmandate im Berner Oberland mit persönlicher Beratung, sorgfältiger Koordination und einem klaren Blick für nachhaltige Lösungen.</p>
     </div>
   </section>
 
-  <section class="content-section" id="ueber-uns">
+  <section class="content-section" id="ueber-uns" aria-labelledby="ueber-uns-title">
     <div class="content-inner">
-      <h2 class="section-title">Über uns</h2>
-      <p>Bashkaran Real Estate steht für persönliche, regionale und zuverlässige Immobilienbetreuung im Berner Oberland.</p>
+      <h2 class="section-title" id="ueber-uns-title">Über uns</h2>
+      <p>Bashkaran Real Estate steht für persönliche und zuverlässige Immobilienbetreuung. Wir beraten Eigentümer und Mieter bei Verwaltung, Vermietung und Nachmietersuche im Berner Oberland.</p>
     </div>
   </section>
+  </main>
 
   <footer id="kontakt">
     <div class="footer-inner">
-      <img class="footer-logo" src="assets/logo.png" alt="Bashkaran Real Estate">
+      <img class="footer-logo" src="assets/logo.png" alt="Bashkaran Real Estate" width="1722" height="429" loading="lazy" decoding="async">
       <p class="footer-label">Rufen Sie uns an</p>
       <p class="footer-info"><a href="tel:+41788961623">078 896 16 23</a></p>
       <p class="footer-label">Schreiben Sie uns</p>
       <p class="footer-info"><a href="mailto:info@bashkaran.ch">info@bashkaran.ch</a></p>
-      <p class="footer-meta">
+      <address class="footer-meta">
         Bashkaran Real Estate<br>
         Grassiweg 38, 3714 Frutigen<br>
-        HR-Nr. CH-036.1.108.702-2<br>
-        &copy; 2026 Bashkaran Real Estate
-      </p>
+        HR-Nr. CH-036.1.108.702-2
+      </address>
+      <p class="footer-copyright">&copy; 2026 Bashkaran Real Estate</p>
     </div>
   </footer>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Bashkaran Real Estate",
-    "legalName": "Bashkaran Real Estate",
-    "url": "https://bashkaran.ch/",
-    "email": "info@bashkaran.ch",
-    "telephone": "+41788961623",
-    "image": "https://bashkaran.ch/assets/logo.png",
-    "logo": "https://bashkaran.ch/assets/logo.png",
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Berner Oberland, Schweiz"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Grassiweg 38",
-      "postalCode": "3714",
-      "addressLocality": "Frutigen",
-      "addressCountry": "CH"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://bashkaran.ch/#website",
+        "url": "https://bashkaran.ch/",
+        "name": "Bashkaran Real Estate",
+        "inLanguage": "de-CH",
+        "publisher": { "@id": "https://bashkaran.ch/#business" }
+      },
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://bashkaran.ch/#business",
+        "name": "Bashkaran Real Estate",
+        "legalName": "Bashkaran Real Estate",
+        "url": "https://bashkaran.ch/",
+        "email": "info@bashkaran.ch",
+        "telephone": "+41788961623",
+        "description": "Persönliche Immobilienverwaltung, Vermietung und Nachmietersuche im Berner Oberland.",
+        "image": "https://bashkaran.ch/assets/hero.jpg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bashkaran.ch/assets/logo.png",
+          "width": 1722,
+          "height": 429
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Berner Oberland, Schweiz"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Grassiweg 38",
+          "postalCode": "3714",
+          "addressLocality": "Frutigen",
+          "addressCountry": "CH"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Immobiliendienstleistungen",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Immobilienverwaltung" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Immobilienvermietung" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nachmietersuche" } }
+          ]
+        }
+      }
+    ]
   }
   </script>
   <script>
