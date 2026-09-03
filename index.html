@@ -329,31 +329,45 @@
     background: var(--brand-dark);
   }
 
-  .portfolio-card {
+  .portfolio-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
-    gap: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
     margin-top: 28px;
+  }
+
+  .property-card {
+    min-width: 0;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 16px;
     background: #f7f8f9;
   }
 
-  .portfolio-gallery {
-    min-width: 0;
-    padding: 10px;
-    background: #edf1f2;
-  }
-
-  .portfolio-main-image {
+  .property-gallery-wrap {
     position: relative;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
   }
 
-  .portfolio-main-image img,
-  .portfolio-thumbnail img {
+  .property-gallery {
+    display: flex;
+    overflow-x: auto;
+    aspect-ratio: 4 / 3;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .property-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  .property-slide {
+    flex: 0 0 100%;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+
+  .property-slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -362,9 +376,9 @@
 
   .portfolio-badge {
     position: absolute;
-    z-index: 1;
-    top: 16px;
-    right: 16px;
+    z-index: 2;
+    top: 14px;
+    right: 14px;
     padding: 9px 13px;
     border-radius: 8px;
     background: var(--brand);
@@ -378,87 +392,59 @@
     background: var(--brand-dark);
   }
 
-  .portfolio-thumbnails {
+  .gallery-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-top: 8px;
-  }
-
-  .portfolio-thumbnail {
-    display: block;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-    border-radius: 8px;
-  }
-
-  .portfolio-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: clamp(32px, 5vw, 64px);
-  }
-
-  .portfolio-kicker {
-    margin: 0 0 10px;
-    color: var(--brand);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .portfolio-details h3 {
-    margin: 0 0 12px;
-    color: var(--text);
-    font-size: clamp(23px, 3vw, 32px);
-    line-height: 1.2;
-  }
-
-  .portfolio-location {
-    margin-bottom: 18px !important;
-    color: var(--brand) !important;
-    font-weight: 600;
-  }
-
-  .portfolio-description {
-    margin-bottom: 28px !important;
-  }
-
-  .portfolio-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0 0 22px;
+    place-items: center;
+    width: 38px;
+    height: 38px;
     padding: 0;
-    list-style: none;
+    border: 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--brand-dark);
+    font-size: 22px;
+    cursor: pointer;
+    transform: translateY(-50%);
   }
 
-  .portfolio-facts li {
-    padding: 7px 10px;
-    border-radius: 7px;
-    background: #e7edef;
-    color: var(--brand-dark);
-    font-size: 13px;
-    font-weight: 600;
+  .gallery-arrow.previous { left: 14px; }
+  .gallery-arrow.next { right: 14px; }
+
+  .property-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 92px;
+    padding: 20px;
+  }
+
+  .property-info h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.3;
   }
 
   .portfolio-link {
+    flex: 0 0 auto;
     display: inline-block;
-    padding: 13px 24px;
+    padding: 10px 14px;
     border-radius: 10px;
     background: var(--brand);
     color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
     text-decoration: none;
-    transition: background 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
   }
 
   .portfolio-link:hover {
     background: var(--brand-dark);
-    transform: translateY(-1px);
   }
 
   @media (max-width: 900px) {
@@ -522,12 +508,14 @@
       gap: 32px;
     }
 
-    .portfolio-card {
+    .portfolio-grid {
       grid-template-columns: 1fr;
     }
 
-    .portfolio-details {
-      padding: 32px 24px 36px;
+    .property-info {
+      align-items: flex-start;
+      flex-direction: column;
+      min-height: 0;
     }
 
     .hero-card {
@@ -655,63 +643,42 @@
   <section class="content-section" id="portfolio" aria-labelledby="portfolio-title">
     <div class="content-inner">
       <h2 class="section-title" id="portfolio-title">Portfolio</h2>
-      <article class="portfolio-card">
-        <div class="portfolio-gallery">
-          <a class="portfolio-main-image" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer" aria-label="Inserat der Wohnung in Matten bei Interlaken ansehen">
+      <div class="portfolio-grid">
+        <article class="property-card">
+          <div class="property-gallery-wrap">
             <span class="portfolio-badge">ZU VERMIETEN</span>
-            <img src="assets/portfolio/matten-wohnkueche.jpg" alt="Helle Wohnküche der Wohnung in Matten bei Interlaken" width="1467" height="1072" loading="lazy" decoding="async">
-          </a>
-          <div class="portfolio-thumbnails" aria-label="Weitere Bilder der Wohnung">
-            <a class="portfolio-thumbnail" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">
-              <img src="assets/portfolio/matten-aussenansicht.jpg" alt="Aussenansicht in Matten bei Interlaken" width="1320" height="980" loading="lazy" decoding="async">
-            </a>
-            <a class="portfolio-thumbnail" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">
-              <img src="assets/portfolio/matten-wohnraum.jpg" alt="Heller Wohnraum mit Holzverkleidung" width="1448" height="1086" loading="lazy" decoding="async">
-            </a>
-            <a class="portfolio-thumbnail" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">
-              <img src="assets/portfolio/matten-bad.jpg" alt="Badezimmer der Wohnung" width="1448" height="1086" loading="lazy" decoding="async">
-            </a>
+            <div class="property-gallery" tabindex="0" aria-label="Bilder der Wohnung in Matten bei Interlaken">
+              <figure class="property-slide"><img src="assets/portfolio/matten-wohnkueche.jpg" alt="Helle Wohnküche der Wohnung in Matten bei Interlaken" width="1467" height="1072" loading="lazy" decoding="async"></figure>
+              <figure class="property-slide"><img src="assets/portfolio/matten-aussenansicht.jpg" alt="Aussenansicht in Matten bei Interlaken" width="1320" height="980" loading="lazy" decoding="async"></figure>
+              <figure class="property-slide"><img src="assets/portfolio/matten-wohnraum.jpg" alt="Heller Wohnraum mit Holzverkleidung" width="1448" height="1086" loading="lazy" decoding="async"></figure>
+              <figure class="property-slide"><img src="assets/portfolio/matten-bad.jpg" alt="Badezimmer der Wohnung" width="1448" height="1086" loading="lazy" decoding="async"></figure>
+            </div>
+            <button class="gallery-arrow previous" type="button" aria-label="Vorheriges Bild">‹</button>
+            <button class="gallery-arrow next" type="button" aria-label="Nächstes Bild">›</button>
           </div>
-        </div>
-        <div class="portfolio-details">
-          <p class="portfolio-kicker">Aktuelles Mietangebot</p>
-          <h3>Wohnung in Matten bei Interlaken</h3>
-          <p class="portfolio-location">3800 Matten bei Interlaken</p>
-          <p class="portfolio-description">Wohnliches Ambiente mit viel Holz, hellen Dachräumen und schönem Blick in die Bergwelt.</p>
-          <a class="portfolio-link" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">Inserat ansehen</a>
-        </div>
-      </article>
+          <div class="property-info">
+            <h3>Wohnung in Matten bei Interlaken</h3>
+            <a class="portfolio-link" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">Inserat ansehen</a>
+          </div>
+        </article>
 
-      <article class="portfolio-card">
-        <div class="portfolio-gallery">
-          <div class="portfolio-main-image">
+        <article class="property-card">
+          <div class="property-gallery-wrap">
             <span class="portfolio-badge is-rented">VERMIETET</span>
-            <img src="assets/portfolio/moosseedorf-wohnbereich.jpg" alt="Heller Wohnbereich der vermieteten Maisonette-Wohnung in Moosseedorf" width="2000" height="1270" loading="lazy" decoding="async">
+            <div class="property-gallery" tabindex="0" aria-label="Bilder der vermieteten Wohnung in Moosseedorf">
+              <figure class="property-slide"><img src="assets/portfolio/moosseedorf-wohnbereich.jpg" alt="Heller Wohnbereich der vermieteten Maisonette-Wohnung in Moosseedorf" width="2000" height="1270" loading="lazy" decoding="async"></figure>
+              <figure class="property-slide"><img src="assets/portfolio/moosseedorf-kueche.jpg" alt="Küche der Maisonette-Wohnung" width="2000" height="1304" loading="lazy" decoding="async"></figure>
+              <figure class="property-slide"><img src="assets/portfolio/moosseedorf-zimmer.jpg" alt="Zimmer mit Einbauschrank" width="2000" height="1270" loading="lazy" decoding="async"></figure>
+              <figure class="property-slide"><img src="assets/portfolio/moosseedorf-zimmer-hell.jpg" alt="Helles Zimmer mit Holzboden" width="2000" height="1270" loading="lazy" decoding="async"></figure>
+            </div>
+            <button class="gallery-arrow previous" type="button" aria-label="Vorheriges Bild">‹</button>
+            <button class="gallery-arrow next" type="button" aria-label="Nächstes Bild">›</button>
           </div>
-          <div class="portfolio-thumbnails" aria-label="Weitere Bilder der vermieteten Wohnung">
-            <span class="portfolio-thumbnail">
-              <img src="assets/portfolio/moosseedorf-kueche.jpg" alt="Küche der Maisonette-Wohnung" width="2000" height="1304" loading="lazy" decoding="async">
-            </span>
-            <span class="portfolio-thumbnail">
-              <img src="assets/portfolio/moosseedorf-zimmer.jpg" alt="Zimmer mit Einbauschrank" width="2000" height="1270" loading="lazy" decoding="async">
-            </span>
-            <span class="portfolio-thumbnail">
-              <img src="assets/portfolio/moosseedorf-zimmer-hell.jpg" alt="Helles Zimmer mit Holzboden" width="2000" height="1270" loading="lazy" decoding="async">
-            </span>
+          <div class="property-info">
+            <h3>4½-Zimmer-Maisonette-Wohnung in Moosseedorf</h3>
           </div>
-        </div>
-        <div class="portfolio-details">
-          <p class="portfolio-kicker">Erfolgreich vermittelt</p>
-          <h3>Duplex-/Maisonette-Wohnung in Moosseedorf</h3>
-          <p class="portfolio-location">3302 Moosseedorf</p>
-          <ul class="portfolio-facts" aria-label="Objektdaten">
-            <li>4½ Zimmer</li>
-            <li>100 m²</li>
-            <li>Maisonette / Duplex</li>
-          </ul>
-          <p class="portfolio-description">Erfolgreiche Vermietung einer grosszügigen Maisonette-Wohnung mit hellen Räumen und wohnlichem Ambiente.</p>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -809,6 +776,20 @@
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.setAttribute('aria-label', 'Menü öffnen');
       }
+    });
+
+    document.querySelectorAll('.property-gallery-wrap').forEach((galleryWrap) => {
+      const gallery = galleryWrap.querySelector('.property-gallery');
+      const slides = gallery.querySelectorAll('.property-slide');
+
+      const showSlide = (direction) => {
+        const current = Math.round(gallery.scrollLeft / gallery.clientWidth);
+        const next = (current + direction + slides.length) % slides.length;
+        gallery.scrollTo({ left: next * gallery.clientWidth, behavior: 'smooth' });
+      };
+
+      galleryWrap.querySelector('.previous').addEventListener('click', () => showSlide(-1));
+      galleryWrap.querySelector('.next').addEventListener('click', () => showSlide(1));
     });
   </script>
 </body>
