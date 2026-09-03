@@ -374,6 +374,38 @@
     object-fit: cover;
   }
 
+  .property-cta-slide {
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    background: var(--brand-dark);
+    text-align: center;
+  }
+
+  .property-cta-content {
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .property-cta-content p {
+    max-width: 300px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .property-cta-content .portfolio-link {
+    background: #ffffff;
+    color: var(--brand-dark);
+  }
+
+  .property-cta-content .portfolio-link:hover {
+    background: #e8edf0;
+  }
+
   .portfolio-badge {
     position: absolute;
     z-index: 2;
@@ -669,10 +701,16 @@
         <article class="property-card">
           <div class="property-gallery-wrap">
             <div class="property-gallery" tabindex="0" aria-label="Bilder der Wohnung in Matten bei Interlaken">
-              <figure class="property-slide"><img src="assets/portfolio/matten-wohnkueche.jpg" alt="Helle Wohnküche der Wohnung in Matten bei Interlaken" width="1467" height="1072" loading="lazy" decoding="async"></figure>
               <figure class="property-slide"><img src="assets/portfolio/matten-aussenansicht.jpg" alt="Aussenansicht in Matten bei Interlaken" width="1320" height="980" loading="lazy" decoding="async"></figure>
+              <figure class="property-slide"><img src="assets/portfolio/matten-wohnkueche.jpg" alt="Helle Wohnküche der Wohnung in Matten bei Interlaken" width="1467" height="1072" loading="lazy" decoding="async"></figure>
               <figure class="property-slide"><img src="assets/portfolio/matten-wohnraum.jpg" alt="Heller Wohnraum mit Holzverkleidung" width="1448" height="1086" loading="lazy" decoding="async"></figure>
               <figure class="property-slide"><img src="assets/portfolio/matten-bad.jpg" alt="Badezimmer der Wohnung" width="1448" height="1086" loading="lazy" decoding="async"></figure>
+              <div class="property-slide property-cta-slide">
+                <div class="property-cta-content">
+                  <p>Vollständiges Inserat ansehen</p>
+                  <a class="portfolio-link" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">Zu ImmoScout24&nbsp;↗</a>
+                </div>
+              </div>
             </div>
             <button class="gallery-arrow previous" type="button" aria-label="Vorheriges Bild">‹</button>
             <button class="gallery-arrow next" type="button" aria-label="Nächstes Bild">›</button>
@@ -686,7 +724,7 @@
                 <li>Dachwohnung</li>
               </ul>
             </div>
-            <a class="portfolio-link" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">Inserat ansehen</a>
+            <a class="portfolio-link" href="https://www.immoscout24.ch/mieten/4003426492" target="_blank" rel="noopener noreferrer">Inserat ansehen&nbsp;↗</a>
           </div>
         </article>
 
