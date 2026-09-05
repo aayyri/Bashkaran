@@ -55,7 +55,7 @@
     list-style: none;
   }
 
-  .nav-links a {
+  .nav-links a, .services-toggle {
     display: block;
     padding: 6px 2px;
     color: var(--brand);
@@ -73,6 +73,13 @@
     text-underline-offset: 5px;
   }
 
+  .nav-dropdown { position: relative; }
+  .services-toggle { border: 0; background: none; font-family: inherit; cursor: pointer; }
+  .services-toggle span { display: inline-block; margin-left: 4px; transition: transform .2s; }
+  .services-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
+  .services-menu { display: none; position: absolute; top: 100%; left: -16px; min-width: 260px; list-style: none; margin: 0; padding: 14px 16px; background: white; border-radius: 10px; box-shadow: 0 8px 24px #14384518; }
+  .nav-dropdown.is-expanded > .services-menu { display: block; }
+  .services-menu a { padding: 12px 0; }
   .menu-toggle {
     display: none;
     align-items: center;
@@ -500,11 +507,15 @@
       transform: translateY(0);
     }
 
-    .nav-links a {
+    .nav-links a, .services-toggle {
       text-align: center;
       font-size: 24px;
       line-height: 1.25;
     }
+    .nav-links { overflow-y: auto; }
+    .services-menu { position: static; min-width: 0; padding: 14px 0 0; box-shadow: none; }
+    .services-menu a { font-size: 17px; white-space: normal; }
+    .services-toggle { margin: auto; }
 
     .services-grid {
       grid-template-columns: 1fr;
