@@ -74,9 +74,8 @@
   }
 
   .nav-dropdown { position: relative; }
-  .services-toggle { border: 0; background: none; font-family: inherit; cursor: pointer; }
-  .services-toggle span { display: inline-block; margin-left: 4px; transition: transform .2s; }
-  .services-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
+  .services-toggle { display: flex; align-items: center; justify-content: center; gap: 7px; border: 0; background: none; font-family: inherit; cursor: pointer; }
+  .services-chevron { display: block; flex: 0 0 16px; }
   .services-menu { display: none; position: absolute; top: 100%; left: -16px; min-width: 260px; list-style: none; margin: 0; padding: 14px 16px; background: white; border-radius: 10px; box-shadow: 0 8px 24px #14384518; }
   .nav-dropdown.is-expanded > .services-menu { display: block; }
   .services-menu a { padding: 12px 0; }
