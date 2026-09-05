@@ -1,0 +1,8 @@
+main { max-width: 1228px; margin: auto; padding: 40px 24px 80px; min-height: 65vh; }
+section { margin-top: 28px; padding: clamp(28px, 6vw, 72px); background: #f7f8f9; border-radius: 24px; }
+.eyebrow { color: #135872; font-size: 14px; margin: 0 0 18px; }
+h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhere; margin: 0 0 24px; }
+.intro { max-width: 660px; font-size: 18px; line-height: 1.65; margin: 0 0 32px; color: #5a6b73; }
+.button { display: inline-block; border-radius: 10px; background: #135872; color: white; padding: 14px 24px; font-size: 14px; font-weight: 500; text-decoration: none; }
+.button:hover { background: #143845; }
+@media (max-width: 600px) { main { padding-top: 24px; } .intro { font-size: 16px; } }
