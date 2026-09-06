@@ -94,7 +94,16 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
 .process-controls button:disabled { opacity: .35; cursor: default; }
 .process-controls button:focus-visible, .holiday-steps:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
 @media (max-width: 600px) {
-  .holiday-start .holiday-steps li { flex-basis: 90%; }
+  .holiday-start .holiday-steps {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: 100%;
+    gap: 20px 28px;
+  }
+  .holiday-start .holiday-steps li { min-width: 0; }
+  .holiday-start .process-controls { justify-content: center; }
 }
 @media (max-width: 600px) {
   .holiday-services .holiday-grid { gap: 28px; }
@@ -103,3 +112,14 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
   .holiday-page > section.holiday-start { padding: 72px 0; }
   .holiday-page .holiday-hero { background-size: auto 155%; background-position: center top; }
 }
+.holiday-page > section.holiday-fee { padding: 32px 28px; }
+
+/* Shared vertical spacing for every content section, including mobile. */
+.holiday-page > section.holiday-services,
+.holiday-page > section.holiday-start,
+.holiday-page > section.holiday-fee {
+  margin-top: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.holiday-page > section > h2 { margin-top: 0; margin-bottom: 22px; }
