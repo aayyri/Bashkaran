@@ -70,3 +70,29 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
   .holiday-page > section.holiday-fee { margin-top: 28px; padding: 28px 24px; }
   .holiday-page .holiday-hero { background-position: 50% 32%; }
 }
+
+.holiday-page > section.holiday-services {
+  border-radius: 0;
+  box-shadow: 0 0 0 100vmax #f3f6f7;
+  clip-path: inset(0 -100vmax);
+}
+.holiday-services .holiday-grid { gap: 32px 48px; }
+.holiday-services .holiday-grid article { padding: 0; border-radius: 0; background: transparent; }
+.holiday-page .holiday-fee h2 { font-size: 22px; }
+.holiday-hero-content { width: min(100%, 540px); }
+.holiday-hero-content h1 { margin: 0 0 16px; }
+.holiday-hero-content .intro { margin: 0 0 28px; }
+.holiday-hero-content .button { display: block; width: 100%; padding: 16px 24px; text-align: center; }
+.holiday-start .holiday-steps { display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 20px; padding-bottom: 16px; }
+.holiday-start .holiday-steps li { flex: 0 0 calc((100% - 28px) / 2); scroll-snap-align: start; }
+.process-controls { display: flex; justify-content: flex-end; gap: 10px; }
+.process-controls button { width: 44px; height: 44px; border: 0; border-radius: 10px; background: #edf2f4; color: var(--brand-dark); font-size: 22px; cursor: pointer; }
+.process-controls button:disabled { opacity: .35; cursor: default; }
+.process-controls button:focus-visible, .holiday-steps:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .holiday-start .holiday-steps li { flex-basis: 90%; }
+}
+@media (max-width: 600px) {
+  .holiday-services .holiday-grid { gap: 28px; }
+  .holiday-page .holiday-fee h2 { font-size: 20px; }
+}

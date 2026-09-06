@@ -1,4 +1,19 @@
 const menuToggle = document.querySelector('.menu-toggle');
+const process = document.querySelector('#holiday-process');
+if (process) {
+  const previous = document.querySelector('.process-prev');
+  const next = document.querySelector('.process-next');
+  const update = () => {
+    previous.disabled = process.scrollLeft <= 2;
+    next.disabled = process.scrollLeft + process.clientWidth >= process.scrollWidth - 2;
+  };
+  const move = (direction) => process.scrollBy({left: direction * (process.firstElementChild.getBoundingClientRect().width + 28), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+  previous.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  process.addEventListener('scroll', update, {passive: true});
+  window.addEventListener('resize', update);
+  update();
+}
     const mainMenu = document.querySelector('#main-menu');
     const dropdown = document.querySelector('.nav-dropdown');
     const servicesToggle = document.querySelector('.services-toggle');
