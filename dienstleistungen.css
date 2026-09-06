@@ -7,7 +7,7 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
 .button:hover { background: #143845; }
 @media (max-width: 600px) { main { padding-top: 24px; } .intro { font-size: 16px; } }
 
-.holiday-page { padding-top: 12px; }
+.holiday-page { padding-top: 12px; padding-bottom: 0; }
 .holiday-page .holiday-hero { margin-top: 0; min-height: 560px; display: flex; align-items: center; background: url('assets/ferienwohnung-hero.jpg') center 76% / cover no-repeat; background-color: rgba(0,0,0,.42); background-blend-mode: multiply; color: white; }
 .holiday-hero-content { max-width: 650px; }
 .holiday-hero .eyebrow, .holiday-hero .intro { color: white; }
@@ -119,10 +119,10 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
 .holiday-page > section.holiday-start,
 .holiday-page > section.holiday-fee {
   margin-top: 32px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
-.holiday-page > section > h2 { margin-top: 0; margin-bottom: 22px; }
+.holiday-page > section > h2 { margin-top: 0; margin-bottom: 28px; }
 .holiday-start .process-controls { justify-content: flex-start; }
 .holiday-page > section.holiday-start { margin-top: 0; }
 .holiday-page > section.holiday-fee {
@@ -131,4 +131,12 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
   padding-right: 0;
   box-shadow: 0 0 0 100vmax #eaf0f3;
   clip-path: inset(0 -100vmax);
+}
+.holiday-services .holiday-grid { margin-top: 40px; row-gap: 40px; }
+.holiday-start .holiday-steps { margin-top: 32px; }
+.holiday-fee .holiday-lead { margin-bottom: 36px; }
+@media (max-width: 600px) {
+  .holiday-page > section.holiday-services,
+  .holiday-page > section.holiday-start,
+  .holiday-page > section.holiday-fee { padding-top: 48px; padding-bottom: 48px; }
 }
