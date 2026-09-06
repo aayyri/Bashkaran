@@ -135,6 +135,16 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
 .holiday-services .holiday-grid { margin-top: 40px; row-gap: 40px; }
 .holiday-start .holiday-steps { margin-top: 32px; }
 .holiday-fee .holiday-lead { margin-bottom: 36px; }
+.holiday-services .holiday-grid { gap: 24px; }
+.holiday-services .holiday-grid article.care-card { position: relative; isolation: isolate; overflow: hidden; border-radius: 16px; min-height: 360px; padding: 32px; display: flex; align-items: flex-end; background: #143845; }
+.care-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.care-card::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to bottom, rgba(0,0,0,.05) 15%, rgba(0,0,0,.78) 100%); }
+.holiday-services .care-card h3, .holiday-services .care-card p { color: #fff; }
+.holiday-services .care-card p { max-width: 520px; line-height: 1.6; }
+.holiday-services .care-card:first-child { min-height: 360px; }
+@media (max-width: 600px) {
+  .holiday-services .holiday-grid article.care-card { min-height: 340px; padding: 24px; }
+}
 @media (max-width: 600px) {
   .holiday-page > section.holiday-services,
   .holiday-page > section.holiday-start,
