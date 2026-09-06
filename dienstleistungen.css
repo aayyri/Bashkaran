@@ -88,7 +88,7 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
 .holiday-start .holiday-steps li { background: #f3f6f7; border: 0; border-radius: 16px; padding: 28px; }
 .holiday-start .process-controls { margin-top: 16px; }
 .holiday-start .holiday-steps { display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 20px; padding-bottom: 16px; }
-.holiday-start .holiday-steps li { flex: 0 0 calc((100% - 28px) / 2); scroll-snap-align: start; }
+.holiday-start .holiday-steps li { flex: 0 0 calc((100% - 84px) / 2); scroll-snap-align: start; }
 .process-controls { display: flex; justify-content: flex-end; gap: 10px; }
 .process-controls button { width: 44px; height: 44px; border: 0; border-radius: 10px; background: #edf2f4; color: var(--brand-dark); font-size: 22px; cursor: pointer; }
 .process-controls button:disabled { opacity: .35; cursor: default; }
@@ -99,11 +99,11 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
     grid-auto-flow: column;
     grid-template-columns: none;
     grid-template-rows: repeat(2, auto);
-    grid-auto-columns: 100%;
+    grid-auto-columns: calc(100% - 56px);
     gap: 20px 28px;
   }
   .holiday-start .holiday-steps li { min-width: 0; }
-  .holiday-start .process-controls { justify-content: center; }
+  .holiday-start .process-controls { justify-content: flex-start; }
 }
 @media (max-width: 600px) {
   .holiday-services .holiday-grid { gap: 28px; }
@@ -119,7 +119,8 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
 .holiday-page > section.holiday-start,
 .holiday-page > section.holiday-fee {
   margin-top: 32px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .holiday-page > section > h2 { margin-top: 0; margin-bottom: 22px; }
+.holiday-start .process-controls { justify-content: flex-start; }
