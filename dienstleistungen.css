@@ -48,3 +48,25 @@ h1 { font-size: clamp(26px, 4vw, 44px); line-height: 1.15; overflow-wrap: anywhe
   .holiday-grid article { padding: 24px; }
   .holiday-steps { gap: 0; }
 }
+
+/* Explicit section padding also overrides the mobile section reset. */
+.holiday-page > section.holiday-services,
+.holiday-page > section.holiday-start,
+.holiday-page > section.holiday-fee {
+  margin-top: 40px;
+  padding: clamp(28px, 5vw, 60px);
+}
+.holiday-page > section.holiday-services { background: #f3f6f7; }
+.holiday-grid article { background: #fff; }
+.holiday-page > section.holiday-start { background: #fff; }
+.holiday-page > section.holiday-fee { background: #eaf0f3; }
+.holiday-fee h2 { margin-bottom: 18px; }
+.holiday-fee .holiday-lead { max-width: 680px; margin-bottom: 28px; }
+.holiday-fee .button { width: fit-content; max-width: 100%; text-align: center; }
+.holiday-page .holiday-hero { background-position: center 42%; }
+@media (max-width: 600px) {
+  .holiday-page > section.holiday-services,
+  .holiday-page > section.holiday-start,
+  .holiday-page > section.holiday-fee { margin-top: 28px; padding: 28px 24px; }
+  .holiday-page .holiday-hero { background-position: 50% 32%; }
+}
