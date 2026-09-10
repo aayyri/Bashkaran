@@ -1,5 +1,5 @@
 const menuToggle = document.querySelector('.menu-toggle');
-const process = document.querySelector('#holiday-process');
+const process = document.querySelector('.holiday-steps');
 if (process) {
   const previous = document.querySelector('.process-prev');
   const next = document.querySelector('.process-next');

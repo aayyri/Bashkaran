@@ -1,0 +1,18 @@
+.holiday-page.rental-page .holiday-hero {
+  background-image: url('assets/vermietung-hero.jpg');
+  background-position: center 48%;
+  background-color: rgba(0, 0, 0, .48);
+}
+.rental-page .holiday-grid article:first-child { grid-column: auto; }
+.rental-page .holiday-grid article:last-child { grid-column: 1 / -1; }
+.rental-page .care-card:nth-child(1) img { object-position: center 52%; }
+.rental-page .care-card:nth-child(2) img { object-position: center; }
+.rental-page .care-card:nth-child(3) img { object-position: center 55%; }
+.rental-page .care-card:nth-child(4) img { object-position: center 48%; }
+.rental-page .care-card:nth-child(5) img { object-position: center 62%; }
+@media (max-width: 600px) {
+  .holiday-page.rental-page .holiday-hero {
+    background-size: cover;
+    background-position: 38% center;
+  }
+}
