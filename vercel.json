@@ -1,6 +1,12 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "bashkaran.ch" }],
+      "destination": "https://www.bashkaran.ch/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "bashkaran.ch" }],
       "destination": "https://www.bashkaran.ch/:path*",
