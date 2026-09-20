@@ -14,7 +14,7 @@ const translations = new Map(Object.entries({
  'Wohnungssuche / Besichtigungen / Bewerbung':'Searching / viewings / applying',
  'Mietvertrag / Einzug':'Rental agreement / moving in',
  'Wohnen in einer Mietwohnung':'Living in a rented home',
- 'Deine Priorität & Absenden':'Your priority & submit',
+ 'Absenden':'Submit',
  'Vom Suchen bis zum Wohnen: Was läuft gut, was ist mühsam? Teile deine Erfahrungen mit uns.':'From searching to living in your home: what works well and what is frustrating? Share your experiences with us.',
  'Deine Erfahrung zählt.':'Your experience matters.',
  'Was läuft bei der Wohnungssuche gut – und was ist mühsam? Mit deinen Antworten hilfst du uns, den Mietprozess besser zu verstehen.':'What works well when looking for a home, and what is frustrating? Your answers help us understand the rental process better.',
