@@ -95,7 +95,8 @@ footer a{color:inherit;text-underline-offset:3px}
     text-underline-offset: 3px;
   }
 footer#kontakt{max-width:none;margin:0;line-height:normal}
-.survey-page{background:#f3f7f8}
+html:has(.survey-page){background:#fff}
+.survey-page{background:linear-gradient(#f3f7f8,#f3f7f8) 0 80px / 100% calc(100% - 80px) no-repeat #fff}
 .survey-page>main{padding-top:64px}
 .survey-page .survey-intro{margin-top:0;padding:32px}
 .survey-page .survey-intro p:last-child{margin-bottom:0}
