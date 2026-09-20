@@ -1,9 +1,10 @@
 import {translate,translatePage} from './locale.mjs';
+import {sourceFromSearch} from './source.mjs';
 import {questions,validate} from './questions.mjs';
 import {escape as e} from './core.mjs';
 const app=document.querySelector('#app'),notice=document.querySelector('#notice'),cfg=window.RESEARCH_CONFIG||{};
 const ready=/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(cfg.url||'')&&!!cfg.publishableKey&&cfg.submissionsEnabled===true;
-const payload={version:2,language:'de',consent:false,answers:Object.fromEntries(questions.map(q=>[q.id,{values:[],text:''}]))};
+const payload={version:2,language:'de',source:sourceFromSearch(location.search),consent:false,answers:Object.fromEntries(questions.map(q=>[q.id,{values:[],text:''}]))};
 let language=new URLSearchParams(location.search).get('lang')==='en'?'en':'de';
 const languageControl=document.querySelector('#language'),footer=document.querySelector('footer'),footerGerman=footer.innerHTML;
 const t=text=>translate(text,language);

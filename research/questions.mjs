@@ -18,6 +18,7 @@ export const questions = originalQuestions
 export const reviewQuestions = [...questions, ...originalQuestions.filter(q=>['platforms','difficulty'].includes(q.id))];
 export function validate(p){
  if(!p || p.version!==2 || p.consent!==true || !p.answers || typeof p.answers!=='object')return false;
+ if(p.source!==undefined&&!['website','invitation','unknown'].includes(p.source))return false;
  for(const q of questions){const a=p.answers[q.id];if(!a||!Array.isArray(a.values)||typeof a.text!=='string'||a.text.length>3000||a.values.some(v=>!q.options?.includes(v))||new Set(a.values).size!==a.values.length||(!q.multi&&a.values.length>1))return false; const exclusive=[q.exclusive].flat();if(a.values.length>1&&a.values.some(v=>exclusive.includes(v)))return false;}
  return !('solution' in p) && questions.every(q=>p.answers[q.id].otherText===undefined||(typeof p.answers[q.id].otherText==='string'&&p.answers[q.id].otherText.length<=1000&&(!p.answers[q.id].otherText||(q.other&&p.answers[q.id].values.includes(q.other[0])))));
 }
