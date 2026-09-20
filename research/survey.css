@@ -111,7 +111,11 @@ html:has(.survey-page){background:#fff}
 }
 .survey-page .survey-intro p:last-child{margin-bottom:0}
 @media(max-width:600px){.survey-page>main{padding-top:40px}.survey-page .survey-intro{padding:24px}}
-.survey-page>header{position:sticky;top:0;z-index:100;background:#fff;max-width:none;padding-left:max(24px,calc((100% - 1180px)/2));padding-right:max(24px,calc((100% - 1180px)/2));border-bottom:1px solid #e2ebee}
+.survey-page>header{position:sticky;top:0;z-index:100;background:#fff;display:block;max-width:none;min-height:0;padding:0;margin:0;border:0;box-shadow:none;line-height:normal}
+.survey-nav{display:flex;align-items:center;justify-content:space-between;gap:32px;max-width:1228px;margin:0 auto;padding:20px 24px}
+.survey-nav .brand img{display:block;width:150px;height:auto}
+.survey-nav .language-switch select{height:37.37px;min-height:37.37px;padding-top:6px;padding-bottom:6px}
+@media(max-width:900px){.survey-nav{gap:20px}.survey-nav .language-switch select{height:44px;min-height:44px}}
 .survey-page .card{background:#fff;border:1px solid #e2ebee;box-shadow:0 10px 30px rgba(20,40,50,.08)}
 .survey-page fieldset.card{position:relative;padding-top:26px}
 .survey-page legend{float:left;width:100%;padding:0;margin-bottom:16px}
