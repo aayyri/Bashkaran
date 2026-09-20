@@ -30,3 +30,79 @@ footer{max-width:none;background:#143845;color:#fff;font-size:14px;padding:42px 
 .research-footer p{margin:10px 0;color:#fff;line-height:1.6}
 footer a{color:inherit;text-underline-offset:3px}
 @media(max-width:600px){header{padding:20px;gap:20px}.header-label{max-width:120px;font-size:13px}.brand img{width:140px}main{padding-top:22px}.card{padding:20px;margin:26px 0}legend{font-size:19px}.choice{padding:12px}.actions button{flex:1}.research-footer img{width:150px}}
+
+/* Footer layout shared with the main website. */
+  footer {
+    background: #143845;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: left;
+    padding: 40px 24px;
+  }
+
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-logo {
+    height: 28px;
+    width: auto;
+    display: block;
+    margin: 8px 0 32px;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-label {
+    font-size: 14px;
+    margin: 0 0 4px;
+  }
+
+  .footer-info {
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+
+  .footer-meta {
+    font-style: normal;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 24px;
+    padding-top: 16px;
+    line-height: 2.2;
+  }
+
+  .footer-legal,
+  .footer-copyright {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .footer-legal a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+footer#kontakt{max-width:none;margin:0;line-height:normal}
+.survey-page{background:#f3f7f8}
+.survey-page>header{max-width:none;padding-left:max(24px,calc((100% - 1180px)/2));padding-right:max(24px,calc((100% - 1180px)/2));border-bottom:1px solid #e2ebee}
+.survey-page .card{background:#fff;border:1px solid #e2ebee;box-shadow:0 10px 30px rgba(20,40,50,.08)}
+.survey-page fieldset.card{position:relative;padding-top:26px}
+.survey-page legend{float:left;width:100%;padding:0;margin-bottom:16px}
+.survey-page legend+*{clear:both}
+.survey-page .choice{background:#f8fafb}
+.survey-page .choice:hover{background:#eef4f6}
+.survey-page .choice:has(input:checked){background:#e5f0f5;border-color:#135872}
+.survey-page .eyebrow{display:inline-block;background:#e3eef2;padding:8px 14px;border-radius:8px;margin-top:12px}
+.survey-page .check{background:#e8f1f4;border:1px solid #d4e3e9;padding:18px;border-radius:12px}

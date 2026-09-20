@@ -1,4 +1,4 @@
-import {questions,counts} from './questions.mjs';
+import {reviewQuestions as questions,counts} from './questions.mjs';
 import {escape as e} from './core.mjs';
 const app=document.querySelector('#app'),notice=document.querySelector('#notice'),cfg=window.RESEARCH_CONFIG||{};let token='',rows=[];
 const ready=/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(cfg.url||'')&&cfg.publishableKey;
