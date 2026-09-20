@@ -20,13 +20,12 @@ export const journeyQuestions=[
  {id:'journey_priority',title:'Welche eine Sache würdest du am gesamten Mietprozess am liebsten verbessern?',options:[
  'Wohnungssuche / Inserate','Besichtigungen','Bewerbung / Unterlagen','Rückmeldungen während der Bewerbung','Vertrag / Unterschrift','Kaution','Einzug / Übergabe','Kontakt zur Verwaltung / Vermietung','Mängel / Reparaturen','Nebenkosten / Mietzahlungen','Etwas anderes','Ich würde nichts ändern','Kann ich noch nicht beurteilen'],other:['Etwas anderes','Was würdest du verbessern?'],en:{title:'What single thing would you most like to improve about the whole rental process?',options:[
  'Searching / listings','Viewings','Applications / documents','Responses during the application process','Agreement / signing','Deposit','Move-in / handover','Contact with property management / landlord','Defects / repairs','Utility charges / rent payments','Something else','I would not change anything','I cannot judge yet'],other:'What would you improve?'}},
- {id:'journey_comments',title:'Was möchtest du uns sonst noch mitgeben?',onlyText:true,free:'Weitere Erfahrungen oder Ergänzungen',en:{title:'Is there anything else you would like to tell us?',free:'Other experiences or comments'}}
 ];
 export function visibleQuestions(answers){const selected=answers.journey_phases?.values||[];return journeyQuestions.filter(q=>!q.phase||selected.includes(q.phase));}
 export function journeySteps(answers){const selected=answers.journey_phases?.values||[];return [
  {title:'Deine Erfahrungen',ids:['journey_phases']},
  ...phases.filter(p=>selected.includes(p)).map((p,i)=>({title:p,ids:journeyQuestions.filter(q=>q.phase===p).map(q=>q.id)})),
- {title:'Deine Priorität & Absenden',ids:['journey_priority','journey_comments'],final:true}
+ {title:'Deine Priorität & Absenden',ids:['journey_priority'],final:true}
  ];}
 export function submissionPayload(payload){const ids=new Set(visibleQuestions(payload.answers).map(q=>q.id));return {...payload,answers:Object.fromEntries(Object.entries(payload.answers).filter(([id])=>ids.has(id)))};}
 export function validateJourney(p){
