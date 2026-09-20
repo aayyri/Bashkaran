@@ -121,3 +121,4 @@ html:has(.survey-page){background:#fff}
 .survey-page .choice:has(input:checked){background:#e5f0f5;border-color:#135872}
 .survey-page .eyebrow{display:inline-block;background:#e3eef2;padding:8px 14px;border-radius:8px;margin-top:12px}
 .survey-page .check{background:#e8f1f4;border:1px solid #d4e3e9;padding:18px;border-radius:12px}
+.survey-page #survey>.actions+.muted{margin-top:24px}
