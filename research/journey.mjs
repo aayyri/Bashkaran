@@ -17,15 +17,13 @@ export const journeyQuestions=[
  'Zuständige Ansprechperson erreichen','Mängel / Reparaturen melden','Rückmeldungen / Bearbeitungsstand erhalten','Auf Reparaturen warten','Nebenkostenabrechnung verstehen / klären','Mietzahlungen / Änderungen nachvollziehen','Dokumente / Absprachen wiederfinden'],
  'While living in your current or most recent rented home, what was difficult?',[
  'Reaching the right contact person','Reporting defects / requesting repairs','Getting responses / progress updates','Waiting for repairs','Understanding / clarifying utility and service charge statements','Keeping track of rent payments / changes','Finding documents / previous agreements']),
- {id:'journey_priority',title:'Welche eine Sache würdest du am gesamten Mietprozess am liebsten verbessern?',options:[
- 'Wohnungssuche / Inserate','Besichtigungen','Bewerbung / Unterlagen','Rückmeldungen während der Bewerbung','Vertrag / Unterschrift','Kaution','Einzug / Übergabe','Kontakt zur Verwaltung / Vermietung','Mängel / Reparaturen','Nebenkosten / Mietzahlungen','Etwas anderes','Ich würde nichts ändern','Kann ich noch nicht beurteilen'],other:['Etwas anderes','Was würdest du verbessern?'],en:{title:'What single thing would you most like to improve about the whole rental process?',options:[
- 'Searching / listings','Viewings','Applications / documents','Responses during the application process','Agreement / signing','Deposit','Move-in / handover','Contact with property management / landlord','Defects / repairs','Utility charges / rent payments','Something else','I would not change anything','I cannot judge yet'],other:'What would you improve?'}},
+ {id:'journey_improvement',title:'Was müsste konkret anders laufen, damit der Mietprozess für dich einfacher wird?',onlyText:true,free:'Denk an eine konkrete Situation: Was war mühsam und was hätte dir geholfen? Bitte keine persönlichen Daten nennen.',en:{title:'What specifically would need to change to make the rental process easier for you?',free:'Think of a specific situation: what was frustrating and what would have helped? Please do not include personal details.'}},
 ];
 export function visibleQuestions(answers){const selected=answers.journey_phases?.values||[];return journeyQuestions.filter(q=>!q.phase||selected.includes(q.phase));}
 export function journeySteps(answers){const selected=answers.journey_phases?.values||[];return [
  {title:'Deine Erfahrungen',ids:['journey_phases']},
  ...phases.filter(p=>selected.includes(p)).map((p,i)=>({title:p,ids:journeyQuestions.filter(q=>q.phase===p).map(q=>q.id)})),
- {title:'Deine Priorität & Absenden',ids:['journey_priority'],final:true}
+ {title:'Deine Priorität & Absenden',ids:['journey_improvement'],final:true}
  ];}
 export function submissionPayload(payload){const ids=new Set(visibleQuestions(payload.answers).map(q=>q.id));return {...payload,answers:Object.fromEntries(Object.entries(payload.answers).filter(([id])=>ids.has(id)))};}
 export function validateJourney(p){
