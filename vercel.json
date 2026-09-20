@@ -1,16 +1,84 @@
 {
+  "headers": [
+    {
+      "source": "/research/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; frame-src 'none'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/umfrage",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; frame-src 'none'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "bashkaran.ch" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "bashkaran.ch"
+        }
+      ],
       "destination": "https://www.bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "bashkaran.ch" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "bashkaran.ch"
+        }
+      ],
       "destination": "https://www.bashkaran.ch/:path*",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/umfrage",
+      "destination": "/research/index.html"
     }
   ]
 }

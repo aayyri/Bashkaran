@@ -1,0 +1,32 @@
+/* Shared visual language of bashkaran.ch: Helvetica, brand blue, white and dark footer. */
+:root{--blue:#135872;--ink:#22333a;--muted:#5a6b73;--line:#dce5e9;--bg:#fff}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#fff}
+header{max-width:1228px;margin:auto;padding:20px 24px;border:0;min-height:80px}
+.brand img{display:block;width:150px;height:auto}
+.header-label{font-size:14px;color:var(--blue);text-align:right}
+main{max-width:1000px;padding-top:38px}
+h1{color:var(--blue);font-weight:600;letter-spacing:-.7px;font-size:clamp(30px,5vw,44px)}
+h2,legend{color:var(--blue)}
+.narrow{max-width:760px}
+.card{border-radius:16px;border:1px solid var(--line);box-shadow:0 6px 24px #14384506;margin:30px 0;padding:28px}
+fieldset{min-width:0;border:0;padding:0;margin:0}
+fieldset.card{padding-top:18px}
+legend{font-size:20px;font-weight:600;line-height:1.4;padding:0 6px;max-width:100%}
+.choice{display:flex;align-items:flex-start;gap:12px;font-weight:400;margin:8px 0;padding:14px 16px;border:1px solid var(--line);border-radius:10px;cursor:pointer;transition:background .15s,border-color .15s}
+.choice:hover{background:#f4f8fa}
+.choice:has(input:checked){background:#eaf3f7;border-color:var(--blue)}
+.choice input[type=radio],.choice input[type=checkbox]{width:20px;height:20px;padding:0;flex:0 0 20px;margin:3px 0;accent-color:var(--blue)}
+button{border-radius:10px;font-family:inherit;font-size:16px;min-height:48px;padding:13px 24px}
+button.primary{background:var(--blue)}
+textarea{background:#fbfcfd;border-color:#cbd8df;border-radius:10px}
+.check{display:block!important;font-size:14px;font-weight:400;line-height:1.7}
+.check input{vertical-align:middle;margin-right:9px}
+.check a{color:var(--blue)}
+.eyebrow{font-size:13px;color:var(--blue);letter-spacing:1.3px}
+.optional{border-top:3px solid var(--blue)}
+footer{max-width:none;background:#143845;color:#fff;font-size:14px;padding:42px 24px;margin-top:32px}
+.research-footer{max-width:1180px;margin:auto}
+.research-footer img{width:170px;height:auto;filter:brightness(0) invert(1);margin-bottom:22px}
+.research-footer p{margin:10px 0;color:#fff;line-height:1.6}
+footer a{color:inherit;text-underline-offset:3px}
+@media(max-width:600px){header{padding:20px;gap:20px}.header-label{max-width:120px;font-size:13px}.brand img{width:140px}main{padding-top:22px}.card{padding:20px;margin:26px 0}legend{font-size:19px}.choice{padding:12px}.actions button{flex:1}.research-footer img{width:150px}}
