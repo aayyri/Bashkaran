@@ -77,6 +77,12 @@
     }
   ],
   "redirects": [
+    {"source":"/vermietung.html","destination":"/vermietung","permanent":true},
+    {"source":"/ferienwohnungsmanagement.html","destination":"/ferienwohnungsmanagement","permanent":true},
+    {"source":"/datenschutz.html","destination":"/datenschutz","permanent":true},
+    {"source":"/research/admin.html","destination":"/research/admin","permanent":true},
+    {"source":"/index.html","destination":"/","permanent":true},
+    {"source":"/research/index.html","destination":"/research","permanent":true},
     {
       "source": "/",
       "has": [
@@ -106,6 +112,10 @@
     }
   ],
   "rewrites": [
+    {"source":"/vermietung","destination":"/vermietung.html"},
+    {"source":"/ferienwohnungsmanagement","destination":"/ferienwohnungsmanagement.html"},
+    {"source":"/datenschutz","destination":"/datenschutz.html"},
+    {"source":"/research/admin","destination":"/research/admin.html"},
     {
       "source": "/research",
       "destination": "/research/index.html"

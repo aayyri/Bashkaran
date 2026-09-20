@@ -599,8 +599,8 @@
     color: rgba(255, 255, 255, 0.5);
   }
 
-  .research-invitation{padding:48px 24px;background:#edf4f6}
-  .research-invitation-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:32px}
+  .research-invitation{padding:40px 24px;background:#f7f8f9}
+  .research-invitation-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:32px;background:#fff;border-radius:16px;padding:32px 28px;box-shadow:0 10px 30px rgba(20,40,50,.08)}
   .research-invitation .section-title{font-size:19px;margin:0 0 10px}
   .research-invitation-inner p{max-width:680px;margin:0;color:var(--text-muted);font-size:15px;line-height:1.7}
   .research-invitation-link{width:auto;flex-shrink:0}
