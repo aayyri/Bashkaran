@@ -1,7 +1,7 @@
 export const questionnaire='rental-journey-v1';
 const phases=['Wohnungssuche / Besichtigungen / Bewerbung','Mietvertrag / Einzug','Wohnen in einer Mietwohnung'];
-const example='Wenn du magst: Was ist konkret passiert? Bitte keine persönlichen Daten nennen.';
-const enExample='If you like, what happened? Please do not include personal details.';
+const example='Wenn du magst: Was ist konkret passiert?';
+const enExample='If you like, what happened?';
 function problem(id,phase,title,options,enTitle,enOptions){return {id,phase,title,multi:true,options:[...options,'Etwas anderes','Keine Schwierigkeiten','Kann ich nicht beurteilen'],exclusive:['Keine Schwierigkeiten','Kann ich nicht beurteilen'],other:['Etwas anderes','Was war sonst schwierig?'],free:example,en:{title:enTitle,options:[...enOptions,'Something else','No difficulties','I cannot judge'],other:'What else was difficult?',free:enExample}};}
 export const journeyQuestions=[
  {id:'journey_phases',title:'Welche Phasen hast du selbst schon erlebt?',multi:true,options:[...phases,'Noch keine dieser Phasen'],exclusive:'Noch keine dieser Phasen',en:{title:'Which stages have you personally experienced?',options:['Searching / viewings / applying','Rental agreement / moving in','Living in a rented home','None of these stages yet']}},
@@ -17,7 +17,7 @@ export const journeyQuestions=[
  'Zuständige Ansprechperson erreichen','Mängel / Reparaturen melden','Rückmeldungen / Bearbeitungsstand erhalten','Auf Reparaturen warten','Nebenkostenabrechnung verstehen / klären','Mietzahlungen / Änderungen nachvollziehen','Dokumente / Absprachen wiederfinden'],
  'While living in your current or most recent rented home, what was difficult?',[
  'Reaching the right contact person','Reporting defects / requesting repairs','Getting responses / progress updates','Waiting for repairs','Understanding / clarifying utility and service charge statements','Keeping track of rent payments / changes','Finding documents / previous agreements']),
- {id:'journey_improvement',title:'Was müsste konkret anders laufen, damit der Mietprozess für dich einfacher wird?',onlyText:true,free:'Denk an eine konkrete Situation: Was war mühsam und was hätte dir geholfen? Bitte keine persönlichen Daten nennen.',en:{title:'What specifically would need to change to make the rental process easier for you?',free:'Think of a specific situation: what was frustrating and what would have helped? Please do not include personal details.'}},
+ {id:'journey_improvement',title:'Was müsste konkret anders laufen, damit der Mietprozess für dich einfacher wird?',onlyText:true,free:'Denk an eine konkrete Situation: Was war mühsam und was hätte dir geholfen?',en:{title:'What specifically would need to change to make the rental process easier for you?',free:'Think of a specific situation: what was frustrating and what would have helped?'}},
 ];
 export function visibleQuestions(answers){const selected=answers.journey_phases?.values||[];return journeyQuestions.filter(q=>!q.phase||selected.includes(q.phase));}
 export function journeySteps(answers){const selected=answers.journey_phases?.values||[];return [

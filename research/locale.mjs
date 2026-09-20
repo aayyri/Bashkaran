@@ -18,7 +18,7 @@ const translations = new Map(Object.entries({
  'Vom Suchen bis zum Wohnen: Was läuft gut, was ist mühsam? Teile deine Erfahrungen mit uns.':'From searching to living in your home: what works well and what is frustrating? Share your experiences with us.',
  'Deine Erfahrung zählt.':'Your experience matters.',
  'Was läuft bei der Wohnungssuche gut – und was ist mühsam? Mit deinen Antworten hilfst du uns, den Mietprozess besser zu verstehen.':'What works well when looking for a home, and what is frustrating? Your answers help us understand the rental process better.',
- 'Jede Frage ist freiwillig – du kannst Fragen überspringen. Deine Teilnahme hat keinen Einfluss auf eine Wohnungsbewerbung. Wir fragen weder Namen noch E-Mail-Adressen ab. Bitte nenne auch in Freitexten keine persönlichen Daten.':'Every question is optional — you can skip any question. Taking part will not affect any rental application. We do not ask for your name or email address. Please do not include personal details in written answers either.',
+ 'Deine Teilnahme hat keinen Einfluss auf eine Wohnungsbewerbung. Wir fragen weder Namen noch E-Mail-Adressen ab.':'Taking part will not affect any rental application. We do not ask for your name or email address.',
  'Mehrfachauswahl möglich':'You can select more than one answer',
  'Eine Antwort möglich':'Select one answer',
  '1 / 3 · Wohnungssuche':'1 / 3 · Finding a home',
