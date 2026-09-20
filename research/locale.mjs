@@ -10,6 +10,12 @@ const english = {
  anything:{title:'Is there anything else you would like to tell us?',free:'Other experiences or comments'}
 };
 const translations = new Map(Object.entries({
+ 'Deine Erfahrungen':'Your experiences',
+ 'Wohnungssuche / Besichtigungen / Bewerbung':'Searching / viewings / applying',
+ 'Mietvertrag / Einzug':'Rental agreement / moving in',
+ 'Wohnen in einer Mietwohnung':'Living in a rented home',
+ 'Deine Priorität & Absenden':'Your priority & submit',
+ 'Von der Wohnungssuche über Vertrag und Einzug bis zum Wohnen: Was läuft gut, was ist mühsam? Wähle zuerst die Phasen, die du selbst erlebt hast. Danach zeigen wir dir nur passende Fragen.':'From searching and signing the agreement to moving in and living in your home: what works well and what is frustrating? First, choose the stages you have personally experienced. We will then show only relevant questions.',
  'Deine Erfahrung zählt.':'Your experience matters.',
  'Was läuft bei der Wohnungssuche gut – und was ist mühsam? Mit deinen Antworten hilfst du uns, den Mietprozess besser zu verstehen.':'What works well when looking for a home, and what is frustrating? Your answers help us understand the rental process better.',
  'Jede Frage ist freiwillig – du kannst Fragen überspringen. Deine Teilnahme hat keinen Einfluss auf eine Wohnungsbewerbung. Wir fragen weder Namen noch E-Mail-Adressen ab. Bitte nenne auch in Freitexten keine persönlichen Daten.':'Every question is optional — you can skip any question. Taking part will not affect any rental application. We do not ask for your name or email address. Please do not include personal details in written answers either.',
@@ -33,7 +39,7 @@ const translations = new Map(Object.entries({
  'Vorschau: Die Speicherung wird noch eingerichtet. Absenden ist noch nicht freigegeben.':'Preview: Saving is still being set up. Submissions are not enabled yet.',
  'Rufen Sie uns an':'Call us','Schreiben Sie uns':'Email us'
 }));
-for(const q of questions){const en=english[q.id];translations.set(q.title,en.title);q.options?.forEach((o,i)=>translations.set(o,en.options[i]));if(q.free)translations.set(q.free,en.free);if(q.other)translations.set(q.other[1],en.other);}
+for(const q of questions){const en=q.en||english[q.id];translations.set(q.title,en.title);q.options?.forEach((o,i)=>translations.set(o,en.options[i]));if(q.free)translations.set(q.free,en.free);if(q.other)translations.set(q.other[1],en.other);}
 export function translate(text,lang){return lang==='en'?(translations.get(text)||text):text;}
 export function translatePage(root,lang){
  if(lang!=='en')return;

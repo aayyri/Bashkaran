@@ -1,3 +1,4 @@
+import {journeyQuestions,validateJourney} from './journey.mjs';
 const originalQuestions = [
  {id:'search',title:'Wo suchst du aktuell nach Wohnungen?',multi:true,options:['Immobilienportale','Websites von Verwaltungen / Maklern','Social Media','Freunde / Familie / Bekannte','Andere Wege','Ich suche aktuell nicht'],exclusive:'Ich suche aktuell nicht',free:'Andere Wege oder Ergänzungen'},
  {id:'platforms',title:'Auf wie vielen Plattformen suchst du gleichzeitig?',options:['Keine','1','2–3','4–5','Mehr als 5','Weiss ich nicht']},
@@ -12,14 +13,16 @@ const originalQuestions = [
 ];
 // Keep previous questions available when reviewing existing responses.
 const otherChoices = {search:['Andere Wege','Welche anderen Wege nutzt du?'],last:['Anderer Weg','Wie hast du dich beworben?'],problems:['Etwas anderes','Was hat dir sonst Schwierigkeiten bereitet?'],repeat:['Andere Angaben / Unterlagen','Welche anderen Angaben oder Unterlagen?'],priority:['Etwas anderes','Was würdest du verbessern?']};
-export const questions = originalQuestions
+const legacyQuestions = originalQuestions
  .filter(q=>!['platforms','difficulty'].includes(q.id))
  .map(q=>{const {free,...rest}=q;return {...rest,other:otherChoices[q.id],...(q.id==='problems'?{free:'Wenn du magst: Erzähle uns von einem konkreten Erlebnis.'}:q.id==='anything'?{free:'Weitere Erfahrungen oder Ergänzungen'}:{})};});
-export const reviewQuestions = [...questions, ...originalQuestions.filter(q=>['platforms','difficulty'].includes(q.id))];
+export const questions=journeyQuestions;
+export const reviewQuestions = [...questions, ...legacyQuestions.map(q=>({...q,legacy:true})), ...originalQuestions.filter(q=>['platforms','difficulty'].includes(q.id)).map(q=>({...q,legacy:true}))];
 export function validate(p){
+ if(p?.questionnaire)return validateJourney(p);
  if(!p || p.version!==2 || p.consent!==true || !p.answers || typeof p.answers!=='object')return false;
  if(p.source!==undefined&&!['website','invitation','unknown'].includes(p.source))return false;
- for(const q of questions){const a=p.answers[q.id];if(!a||!Array.isArray(a.values)||typeof a.text!=='string'||a.text.length>3000||a.values.some(v=>!q.options?.includes(v))||new Set(a.values).size!==a.values.length||(!q.multi&&a.values.length>1))return false; const exclusive=[q.exclusive].flat();if(a.values.length>1&&a.values.some(v=>exclusive.includes(v)))return false;}
- return !('solution' in p) && questions.every(q=>p.answers[q.id].otherText===undefined||(typeof p.answers[q.id].otherText==='string'&&p.answers[q.id].otherText.length<=1000&&(!p.answers[q.id].otherText||(q.other&&p.answers[q.id].values.includes(q.other[0])))));
+ for(const q of legacyQuestions){const a=p.answers[q.id];if(!a||!Array.isArray(a.values)||typeof a.text!=='string'||a.text.length>3000||a.values.some(v=>!q.options?.includes(v))||new Set(a.values).size!==a.values.length||(!q.multi&&a.values.length>1))return false; const exclusive=[q.exclusive].flat();if(a.values.length>1&&a.values.some(v=>exclusive.includes(v)))return false;}
+ return !('solution' in p) && legacyQuestions.every(q=>p.answers[q.id].otherText===undefined||(typeof p.answers[q.id].otherText==='string'&&p.answers[q.id].otherText.length<=1000&&(!p.answers[q.id].otherText||(q.other&&p.answers[q.id].values.includes(q.other[0])))));
 }
 export function counts(rows,q){return (q.options||[]).map(label=>[label,rows.filter(r=>r.payload.answers[q.id]?.values.includes(label)).length]);}
