@@ -100,6 +100,15 @@ html:has(.survey-page){background:#fff}
 .survey-page>main{padding-top:64px}
 .survey-page .survey-intro{margin-top:0;padding:32px}
 .survey-page .survey-intro h1{font-size:clamp(24px,3.5vw,32px);font-weight:700;margin:0 0 16px}
+.language-switch{display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:#135872}
+.language-icon{display:block;flex:0 0 22px}
+.language-switch select{width:auto;min-height:44px;padding:8px 30px 8px 12px;background:#fff;border:1px solid #dce5e9;border-radius:8px;color:#135872;font:inherit;cursor:pointer}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:600px){
+ .survey-page .card.survey-intro{padding-top:36px}
+ .survey-page .actions:has(button[type=submit]){flex-direction:column-reverse}
+ .survey-page .actions:has(button[type=submit]) button{width:100%;flex:auto}
+}
 .survey-page .survey-intro p:last-child{margin-bottom:0}
 @media(max-width:600px){.survey-page>main{padding-top:40px}.survey-page .survey-intro{padding:24px}}
 .survey-page>header{position:sticky;top:0;z-index:100;background:#fff;max-width:none;padding-left:max(24px,calc((100% - 1180px)/2));padding-right:max(24px,calc((100% - 1180px)/2));border-bottom:1px solid #e2ebee}
