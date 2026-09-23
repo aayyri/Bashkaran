@@ -112,6 +112,8 @@
     }
   ],
   "rewrites": [
+    {"source":"/research/de","destination":"/research/index.html"},
+    {"source":"/research/en","destination":"/research/index.html"},
     {"source":"/vermietung","destination":"/vermietung.html"},
     {"source":"/ferienwohnungsmanagement","destination":"/ferienwohnungsmanagement.html"},
     {"source":"/datenschutz","destination":"/datenschutz.html"},

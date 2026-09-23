@@ -8,7 +8,8 @@ import {escape as e} from './core.mjs';
 const app=document.querySelector('#app'),notice=document.querySelector('#notice'),cfg=window.RESEARCH_CONFIG||{};
 const ready=/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(cfg.url||'')&&!!cfg.publishableKey&&cfg.submissionsEnabled===true;
 const payload={version:2,questionnaire,language:'de',source:sourceFromSearch(location.search),consent:false,answers:Object.fromEntries(questions.map(q=>[q.id,{values:[],text:''}]))};
-let language=new URLSearchParams(location.search).get('lang')==='en'?'en':'de';
+const pathLanguage=location.pathname.match(/^\/research\/(de|en)\/?$/)?.[1];
+let language=pathLanguage||(new URLSearchParams(location.search).get('lang')==='en'?'en':'de');
 const languageControl=document.querySelector('#language'),footer=document.querySelector('footer'),footerGerman=footer.innerHTML;
 const t=text=>translate(text,language);
 let welcome=true;
@@ -46,5 +47,5 @@ function capture(){
  }
 }
 const successMarkup='<div class="narrow card"><p class="eyebrow">Befragung abgeschlossen</p><h1>Vielen Dank!</h1><p>Deine Antworten wurden gespeichert. Du kannst dieses Fenster jetzt schliessen.</p></div>';
-languageControl.addEventListener('change',()=>{if(sending)return;if(!completed)capture();language=languageControl.value;notice.textContent='';const url=new URL(location.href);if(language==='en')url.searchParams.set('lang','en');else url.searchParams.delete('lang');history.replaceState(null,'',url);render();});
+languageControl.addEventListener('change',()=>{if(sending)return;if(!completed)capture();language=languageControl.value;notice.textContent='';const url=new URL(location.href);url.pathname='/research/'+language;url.searchParams.delete('lang');history.replaceState(null,'',url);render();});
 render();
