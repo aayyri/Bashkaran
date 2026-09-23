@@ -131,5 +131,7 @@ html:has(.survey-page){background:#fff}
 .survey-page.survey-welcome>main{position:relative;isolation:isolate;overflow:clip;max-width:none;width:100%;padding:80px 24px;min-height:calc(100svh - 84px);display:flex;align-items:center;justify-content:center;background:#d4cdc3}
 .survey-page.survey-welcome>main::before{content:'';position:absolute;inset:-6%;z-index:-1;pointer-events:none;background:linear-gradient(rgba(20,40,50,.12),rgba(20,40,50,.12)),url('/assets/research-welcome-living.jpg') center/cover no-repeat;background-attachment:scroll}
 .survey-welcome #app{width:100%;min-width:0}
+.reason-group{border:0;padding:0;margin:28px 0;min-width:0}
+.reason-group legend{font-size:17px;font-weight:600;line-height:1.5}
 .survey-welcome .survey-intro{margin:0;background:#fff;border:0;box-shadow:0 16px 48px rgba(20,40,50,.18)}
 @media(max-width:600px){.survey-page.survey-welcome>main{padding:48px 20px}.survey-page.survey-welcome>main::before{background-position:42% center}.survey-welcome #start-survey{width:100%}}
