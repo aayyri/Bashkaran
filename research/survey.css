@@ -127,3 +127,7 @@ html:has(.survey-page){background:#fff}
 .survey-page .eyebrow{display:inline-block;background:#e3eef2;padding:8px 14px;border-radius:8px;margin-top:12px}
 .survey-page .check{background:#e8f1f4;border:1px solid #d4e3e9;padding:18px;border-radius:12px}
 .survey-page #survey>.actions+.muted{margin-top:24px}
+.survey-page.survey-welcome>main{max-width:none;width:100%;padding:80px 24px;min-height:calc(100svh - 84px);display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(20,40,50,.12),rgba(20,40,50,.12)),url('/assets/research-welcome.jpg') center/cover no-repeat}
+.survey-welcome #app{width:100%}
+.survey-welcome .survey-intro{margin:0;background:rgba(255,255,255,.96);box-shadow:0 16px 48px rgba(20,40,50,.18)}
+@media(max-width:600px){.survey-page.survey-welcome>main{padding:48px 20px;background-position:42% center}.survey-welcome #start-survey{width:100%}}
