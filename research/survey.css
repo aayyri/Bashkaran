@@ -111,6 +111,7 @@ html:has(.survey-page){background:#fff}
 }
 .survey-page .survey-intro p:last-child{margin-bottom:0}
 .survey-page .survey-intro p.muted{font-size:13px;line-height:1.5;font-weight:400;color:#60747c}
+.survey-page .survey-intro .welcome-note{margin-top:20px;color:#666}
 @media(max-width:600px){.survey-page>main{padding-top:40px}.survey-page .survey-intro{padding:24px}}
 .survey-page>header{position:sticky;top:0;z-index:100;background:#fff;display:block;max-width:none;min-height:0;padding:0;margin:0;border:0;box-shadow:none;line-height:normal}
 .survey-nav{display:flex;align-items:center;justify-content:space-between;gap:32px;max-width:1228px;margin:0 auto;padding:20px 24px}
@@ -129,7 +130,6 @@ html:has(.survey-page){background:#fff}
 .survey-page #survey>.actions+.muted{margin-top:24px}
 .survey-page.survey-welcome>main{position:relative;isolation:isolate;overflow:clip;max-width:none;width:100%;padding:80px 24px;min-height:calc(100svh - 84px);display:flex;align-items:center;justify-content:center;background:#d4cdc3}
 .survey-page.survey-welcome>main::before{content:'';position:absolute;inset:-6%;z-index:-1;pointer-events:none;background:linear-gradient(rgba(20,40,50,.12),rgba(20,40,50,.12)),url('/assets/research-welcome-living.jpg') center/cover no-repeat;background-attachment:scroll}
-html:has(.survey-welcome),body.survey-welcome{overscroll-behavior-y:none}
 .survey-welcome #app{width:100%;min-width:0}
 .survey-welcome .survey-intro{margin:0;background:#fff;border:0;box-shadow:0 16px 48px rgba(20,40,50,.18)}
 @media(max-width:600px){.survey-page.survey-welcome>main{padding:48px 20px}.survey-page.survey-welcome>main::before{background-position:42% center}.survey-welcome #start-survey{width:100%}}
