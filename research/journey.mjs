@@ -22,6 +22,7 @@ export function visibleQuestions(answers){const selected=answers.journey_phases?
 export function journeySteps(answers){const selected=answers.journey_phases?.values||[];return [
  {title:'Deine Erfahrungen',ids:['journey_phases']},
  ...phases.filter(p=>selected.includes(p)).map((p,i)=>({title:p,ids:journeyQuestions.filter(q=>q.phase===p).map(q=>q.id)})),
+ ...((visibleQuestions(answers).some(q=>(answers[q.id]?.values||[]).some(o=>q.followups?.includes(o)||q.other?.[0]===o)))?[{title:'Deine Gründe',ids:visibleQuestions(answers).filter(q=>(answers[q.id]?.values||[]).some(o=>q.followups?.includes(o)||q.other?.[0]===o)).map(q=>q.id),reasons:true}]:[]),
  {title:'Absenden',ids:[],final:true}
  ];}
 export function submissionPayload(payload){const ids=new Set(visibleQuestions(payload.answers).map(q=>q.id));return {...payload,answers:Object.fromEntries(Object.entries(payload.answers).filter(([id])=>ids.has(id)))};}
