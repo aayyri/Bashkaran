@@ -15,7 +15,7 @@ const translations = new Map(Object.entries({
  'Mietvertrag / Einzug':'Rental agreement / moving in',
  'Wohnen in einer Mietwohnung':'Living in a rented home',
  'Absenden':'Submit',
- 'Vom Suchen bis zum Wohnen: Was läuft gut, was ist mühsam? Teile deine Erfahrungen mit uns. Deine Teilnahme hat keinen Einfluss auf eine Wohnungsbewerbung. Wir fragen weder Namen noch E-Mail-Adressen ab.':'From searching to living in your home: what works well and what is frustrating? Share your experiences with us. Taking part will not affect any rental application. We do not ask for your name or email address.',
+ 'Mit dieser Umfrage möchten wir verstehen, was bei Wohnungssuche, Bewerbung, Mietvertrag und im Mietalltag schwierig ist. Teile deine Erfahrungen mit uns. Deine Teilnahme hat keinen Einfluss auf eine Wohnungsbewerbung. Wir fragen weder Namen noch E-Mail-Adressen ab.':'This survey helps us understand difficulties with finding a home, applying, signing a rental agreement and everyday renting. Share your experiences with us. Taking part will not affect any rental application. We do not ask for your name or email address.',
  'Deine Erfahrung zählt.':'Your experience matters.',
  'Was läuft bei der Wohnungssuche gut – und was ist mühsam? Mit deinen Antworten hilfst du uns, den Mietprozess besser zu verstehen.':'What works well when looking for a home, and what is frustrating? Your answers help us understand the rental process better.',
  'Deine Teilnahme hat keinen Einfluss auf eine Wohnungsbewerbung. Wir fragen weder Namen noch E-Mail-Adressen ab.':'Taking part will not affect any rental application. We do not ask for your name or email address.',
