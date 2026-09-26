@@ -26,3 +26,5 @@
 /* Center each button label and its icon as one group. */
 .r-button,.hero-actions .contact-btn,.hero-content>.contact-btn,.contact-btn,.service-btn,.portfolio-link,.r-text-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}
 .arrow-icon,.external-icon{margin-left:0}
+
+.platform-benefits{list-style:none;margin:24px 0;padding:0}.platform-benefits li{padding:15px 0;border-top:1px solid #dce5e7}.platform-benefits strong{display:block;font-size:15px;color:var(--brand-dark);margin-bottom:6px}.platform-benefits span{display:block;font-size:14px;line-height:1.65;color:var(--text-muted)}
