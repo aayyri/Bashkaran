@@ -16,7 +16,7 @@
 
 /* Portfolio and about-page alignment. */
 .property-card{background:#fff}
-.portfolio-badge.is-reserved{background:#80581f;color:white}
+.portfolio-badge.is-reserved{background:#E3ECE5;color:#355E46}
 .faq .r-wrap,.final-cta .r-wrap{max-width:1180px}
 .hero-title{font-size:clamp(34px,3.8vw,50px)}
 .about-intro-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
