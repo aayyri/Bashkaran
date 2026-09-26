@@ -44,13 +44,7 @@
       </button>
       <ul class="nav-links" id="main-menu">
         <li><a href="#home">Home</a></li>
-        <li class="nav-dropdown">
-          <button class="services-toggle" type="button" aria-expanded="false" aria-controls="services-menu">Dienstleistungen <svg class="services-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>
-          <ul class="services-menu" id="services-menu">
-            <li><a href="vermietung">Vermietung</a></li>
-            <li><a href="ferienwohnungsmanagement">Ferienwohnungsmanagement</a></li>
-          </ul>
-        </li>
+        <li><a href="/vermietung">Vermietung</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="/ueber-uns">Über uns</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
@@ -66,7 +60,7 @@
           <h1 class="hero-title" id="hero-title">Ihre Wohnung.<br>Unsere Aufgabe.</h1>
           <p class="hero-subtitle">Die komplette Vermietung im Berner Oberland – von der Präsentation bis zum Mietvertrag. Persönlich betreut, digital organisiert.</p>
         </div>
-        <p class="hero-price">CHF 549 <span>Einführungspreis</span></p><div class="hero-actions"><a class="contact-btn" href="mailto:info@bashkaran.ch?subject=Vermietung%20zum%20Einf%C3%BChrungspreis%20CHF%20549">Wohnung vermieten <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a><a class="hero-secondary" href="https://livinroom.ch">Wohnung finden <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
+        <p class="hero-price">CHF 549 <span>Einführungspreis</span></p><div class="hero-actions"><a class="contact-btn" href="mailto:info@bashkaran.ch?subject=Vermietung%20zum%20Einf%C3%BChrungspreis%20CHF%20549">Wohnung vermieten <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
       </div>
     </div>
   </section>
@@ -76,7 +70,7 @@
       <h2 class="section-title" id="portfolio-title">Portfolio</h2>
       <div class="portfolio-grid">
         <article class="property-card">
-          <div class="property-gallery-wrap">
+          <div class="property-gallery-wrap"><span class="portfolio-badge is-reserved">RESERVIERT</span>
             <div class="property-gallery" tabindex="0" aria-label="Bilder der Wohnung in Matten bei Interlaken">
               <figure class="property-slide"><img src="assets/portfolio/matten-wohnkueche.jpg" alt="Helle Wohnküche der Wohnung in Matten bei Interlaken" width="1467" height="1072" loading="lazy" decoding="async"></figure>
               <figure class="property-slide"><img src="assets/portfolio/matten-wohnraum.jpg" alt="Heller Wohnraum mit Holzverkleidung" width="1448" height="1086" loading="lazy" decoding="async"></figure>
@@ -194,15 +188,14 @@
           "@type": "OfferCatalog",
           "name": "Immobiliendienstleistungen",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vermietung", "url": "https://www.bashkaran.ch/vermietung" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ferienwohnungsmanagement", "url": "https://www.bashkaran.ch/ferienwohnungsmanagement" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vermietung", "url": "https://www.bashkaran.ch/vermietung" } }
           ]
         }
       }
     ]
   }
   </script>
-  <script src="site.js" defer></script>
+  <script src="site.js?v=20260926-nav" defer></script>
 <script src="analytics.js" defer></script>
 </body>
 </html>

@@ -78,6 +78,16 @@
   ],
   "redirects": [
     {
+      "source": "/ferienwohnungsmanagement",
+      "destination": "/vermietung",
+      "permanent": true
+    },
+    {
+      "source": "/ferienwohnungsmanagement.html",
+      "destination": "/vermietung",
+      "permanent": true
+    },
+    {
       "source": "/ueber-uns.html",
       "destination": "/ueber-uns",
       "permanent": true
@@ -85,11 +95,6 @@
     {
       "source": "/vermietung.html",
       "destination": "/vermietung",
-      "permanent": true
-    },
-    {
-      "source": "/ferienwohnungsmanagement.html",
-      "destination": "/ferienwohnungsmanagement",
       "permanent": true
     },
     {
@@ -156,10 +161,6 @@
     {
       "source": "/vermietung",
       "destination": "/vermietung.html"
-    },
-    {
-      "source": "/ferienwohnungsmanagement",
-      "destination": "/ferienwohnungsmanagement.html"
     },
     {
       "source": "/datenschutz",

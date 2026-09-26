@@ -18,9 +18,11 @@ if (process) {
     const dropdown = document.querySelector('.nav-dropdown');
     const servicesToggle = document.querySelector('.services-toggle');
     const setServicesOpen = (open) => {
+      if (!dropdown || !servicesToggle) return;
       dropdown.classList.toggle('is-expanded', open);
       servicesToggle.setAttribute('aria-expanded', String(open));
     };
+    if (dropdown && servicesToggle) {
     servicesToggle.addEventListener('click', () => setServicesOpen(servicesToggle.getAttribute('aria-expanded') !== 'true'));
     dropdown.addEventListener('mouseenter', () => {
       if (matchMedia('(min-width: 901px) and (hover: hover)').matches) setServicesOpen(true);
@@ -40,6 +42,8 @@ if (process) {
         setServicesOpen(false);
       }
     });
+
+    }
 
     menuToggle.addEventListener('click', () => {
       const isOpen = mainMenu.classList.toggle('is-open');

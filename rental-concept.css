@@ -13,3 +13,16 @@
 .hero-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .about-intro{padding-top:90px;padding-bottom:80px}.about-intro h1{font-size:clamp(36px,4.5vw,60px);line-height:1.08;letter-spacing:-.04em;color:var(--brand-dark);margin:0 0 28px}.about-values{padding:32px;border:1px solid #dce5e7;border-radius:20px;background:white}.about-values h3{font-size:22px;margin:0 0 24px}.about-values ul{list-style:none;padding:0;margin:0}.about-values li{padding:18px 0;border-top:1px solid #e5ebed}.about-values strong,.about-values span{display:block}.about-values span{font-size:15px;color:var(--text-muted);line-height:1.6;margin-top:8px}
 @media(max-width:700px){.r-section h2,.section-title{font-size:32px}.about-intro{padding-top:48px;padding-bottom:48px}.livinroom-logo{width:230px}}
+
+/* Portfolio and about-page alignment. */
+.property-card{background:#fff}
+.portfolio-badge.is-reserved{background:#80581f;color:white}
+.faq .r-wrap,.final-cta .r-wrap{max-width:1180px}
+.hero-title{font-size:clamp(34px,3.8vw,50px)}
+.about-intro-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.about-photo{display:block;width:100%;height:390px;object-fit:cover;border-radius:20px}
+.about-intro h1{font-size:clamp(34px,3.8vw,50px)}
+@media(max-width:700px){.hero-title{font-size:34px}.about-intro-grid{grid-template-columns:1fr;gap:28px}.about-photo{height:260px}}
+/* Center each button label and its icon as one group. */
+.r-button,.hero-actions .contact-btn,.hero-content>.contact-btn,.contact-btn,.service-btn,.portfolio-link,.r-text-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}
+.arrow-icon,.external-icon{margin-left:0}
