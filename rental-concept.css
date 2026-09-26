@@ -4,3 +4,12 @@
 @media(max-width:900px){.concept-grid,.price-grid{gap:32px}.r-section{padding:60px 24px}.hero{min-height:650px}.r-steps{gap:24px}.channel-card,.price-card{padding:26px}}
 @media(max-width:700px){.concept-grid,.price-grid,.r-steps{grid-template-columns:1fr}.r-section{padding:48px 24px}.hero{min-height:0;height:auto;padding-bottom:24px}.hero-card{min-height:620px;padding:32px 24px}.hero-title{font-size:39px}.hero-actions{gap:10px}.hero-actions .contact-btn{width:100%;padding-left:18px;padding-right:18px}.hero-secondary{display:block;text-align:center;width:100%}.hero-content{gap:26px}.r-steps{gap:28px}.r-steps h3{margin-top:16px}.price-card .price-amount{font-size:66px}.comparison th,.comparison td{padding:16px 12px}.comparison table{min-width:580px}.r-section h2{font-size:32px}.price-badge{line-height:1.5}.r-button{max-width:100%}.channel-card{padding:26px}.hero-price{font-size:34px}.hero-price span{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Consistent section headings, vector branding and link symbols. */
+.r-section h2,.section-title{font-size:clamp(28px,3.1vw,42px);line-height:1.15;letter-spacing:-.035em}
+.livinroom-logo{display:block;width:260px;max-width:100%;height:auto}
+.arrow-icon{display:inline-block;flex:0 0 18px;vertical-align:-3px;margin-left:8px}
+.hero-actions .contact-btn,.hero-content>.contact-btn{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.hero-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.about-intro{padding-top:90px;padding-bottom:80px}.about-intro h1{font-size:clamp(36px,4.5vw,60px);line-height:1.08;letter-spacing:-.04em;color:var(--brand-dark);margin:0 0 28px}.about-values{padding:32px;border:1px solid #dce5e7;border-radius:20px;background:white}.about-values h3{font-size:22px;margin:0 0 24px}.about-values ul{list-style:none;padding:0;margin:0}.about-values li{padding:18px 0;border-top:1px solid #e5ebed}.about-values strong,.about-values span{display:block}.about-values span{font-size:15px;color:var(--text-muted);line-height:1.6;margin-top:8px}
+@media(max-width:700px){.r-section h2,.section-title{font-size:32px}.about-intro{padding-top:48px;padding-bottom:48px}.livinroom-logo{width:230px}}
