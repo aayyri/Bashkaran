@@ -28,3 +28,5 @@
 .arrow-icon,.external-icon{margin-left:0}
 
 .platform-benefits{list-style:none;margin:24px 0;padding:0}.platform-benefits li{padding:15px 0;border-top:1px solid #dce5e7}.platform-benefits strong{display:block;font-size:15px;color:var(--brand-dark);margin-bottom:6px}.platform-benefits span{display:block;font-size:14px;line-height:1.65;color:var(--text-muted)}
+
+.about-teaser{background:#f2f6f6}.about-teaser .r-lead{margin-bottom:26px}.livinroom-brand-link{display:inline-block;border-radius:4px;max-width:100%;transition:opacity .15s}.livinroom-brand-link:hover{opacity:.72}.livinroom-brand-link:focus-visible{outline:3px solid var(--brand);outline-offset:8px}
