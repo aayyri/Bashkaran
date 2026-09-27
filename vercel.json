@@ -78,6 +78,11 @@
   ],
   "redirects": [
     {
+      "source": "/portfolio.html",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
       "source": "/vermietung",
       "destination": "/",
       "permanent": true
@@ -151,6 +156,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/portfolio",
+      "destination": "/portfolio.html"
+    },
     {
       "source": "/ueber-uns",
       "destination": "/ueber-uns.html"
