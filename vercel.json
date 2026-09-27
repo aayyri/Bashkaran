@@ -78,6 +78,11 @@
   ],
   "redirects": [
     {
+      "source": "/kontakt.html",
+      "destination": "/kontakt",
+      "permanent": true
+    },
+    {
       "source": "/portfolio.html",
       "destination": "/portfolio",
       "permanent": true
@@ -156,6 +161,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/kontakt",
+      "destination": "/kontakt.html"
+    },
     {
       "source": "/portfolio",
       "destination": "/portfolio.html"
