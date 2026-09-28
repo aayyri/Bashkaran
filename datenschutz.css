@@ -6,3 +6,5 @@
 .privacy-page a { color: #135872; text-decoration: underline; text-underline-offset: 3px; }
 .privacy-draft, .privacy-pending { background: #f5f1e7; padding: 16px 20px; border-left: 3px solid #b18435; }
 @media (max-width: 600px) { .privacy-page { padding: 40px 20px 56px; } }
+
+.privacy-page h1{font-size:clamp(28px,3.4vw,40px);color:var(--brand)}.privacy-page h2{font-size:20px;color:var(--brand)}.legal-date{margin-top:36px!important;color:var(--text-muted);font-size:14px!important}.footer-legal{line-height:2}

@@ -78,6 +78,16 @@
   ],
   "redirects": [
     {
+      "source": "/nutzungsbedingungen.html",
+      "destination": "/nutzungsbedingungen",
+      "permanent": true
+    },
+    {
+      "source": "/impressum.html",
+      "destination": "/impressum",
+      "permanent": true
+    },
+    {
       "source": "/kontakt.html",
       "destination": "/kontakt",
       "permanent": true
@@ -161,6 +171,14 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/nutzungsbedingungen",
+      "destination": "/nutzungsbedingungen.html"
+    },
+    {
+      "source": "/impressum",
+      "destination": "/impressum.html"
+    },
     {
       "source": "/kontakt",
       "destination": "/kontakt.html"
