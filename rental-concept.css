@@ -46,3 +46,4 @@
 .contact-card h2{font-size:24px}
 @media(max-width:700px){.hero-title,.about-intro h1{font-size:30px}.r-section h2,.section-title{font-size:28px}.contact-card h2{font-size:24px}}
 .about-values h3,.about-page #livinroom .r-kicker{color:var(--brand)}
+.about-page #livinroom .platform-benefits strong{color:var(--brand)}
