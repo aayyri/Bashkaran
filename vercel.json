@@ -79,72 +79,72 @@
   "redirects": [
     {
       "source": "/index",
-      "destination": "https://www.bashkaran.ch/",
+      "destination": "https://bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/nutzungsbedingungen.html",
-      "destination": "https://www.bashkaran.ch/nutzungsbedingungen",
+      "destination": "https://bashkaran.ch/nutzungsbedingungen",
       "permanent": true
     },
     {
       "source": "/impressum.html",
-      "destination": "https://www.bashkaran.ch/impressum",
+      "destination": "https://bashkaran.ch/impressum",
       "permanent": true
     },
     {
       "source": "/kontakt.html",
-      "destination": "https://www.bashkaran.ch/kontakt",
+      "destination": "https://bashkaran.ch/kontakt",
       "permanent": true
     },
     {
       "source": "/portfolio.html",
-      "destination": "https://www.bashkaran.ch/portfolio",
+      "destination": "https://bashkaran.ch/portfolio",
       "permanent": true
     },
     {
       "source": "/vermietung",
-      "destination": "https://www.bashkaran.ch/",
+      "destination": "https://bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/ferienwohnungsmanagement",
-      "destination": "https://www.bashkaran.ch/",
+      "destination": "https://bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/ferienwohnungsmanagement.html",
-      "destination": "https://www.bashkaran.ch/",
+      "destination": "https://bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/ueber-uns.html",
-      "destination": "https://www.bashkaran.ch/ueber-uns",
+      "destination": "https://bashkaran.ch/ueber-uns",
       "permanent": true
     },
     {
       "source": "/vermietung.html",
-      "destination": "https://www.bashkaran.ch/",
+      "destination": "https://bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/datenschutz.html",
-      "destination": "https://www.bashkaran.ch/datenschutz",
+      "destination": "https://bashkaran.ch/datenschutz",
       "permanent": true
     },
     {
       "source": "/research/admin.html",
-      "destination": "https://www.bashkaran.ch/research/admin",
+      "destination": "https://bashkaran.ch/research/admin",
       "permanent": true
     },
     {
       "source": "/index.html",
-      "destination": "https://www.bashkaran.ch/",
+      "destination": "https://bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/research/index.html",
-      "destination": "https://www.bashkaran.ch/research",
+      "destination": "https://bashkaran.ch/research",
       "permanent": true
     },
     {
@@ -152,10 +152,10 @@
       "has": [
         {
           "type": "host",
-          "value": "bashkaran.ch"
+          "value": "www.bashkaran.ch"
         }
       ],
-      "destination": "https://www.bashkaran.ch/",
+      "destination": "https://bashkaran.ch/",
       "permanent": true
     },
     {
@@ -163,15 +163,15 @@
       "has": [
         {
           "type": "host",
-          "value": "bashkaran.ch"
+          "value": "www.bashkaran.ch"
         }
       ],
-      "destination": "https://www.bashkaran.ch/:path*",
+      "destination": "https://bashkaran.ch/:path*",
       "permanent": true
     },
     {
       "source": "/umfrage",
-      "destination": "https://www.bashkaran.ch/research",
+      "destination": "https://bashkaran.ch/research",
       "permanent": true
     }
   ],
