@@ -78,68 +78,73 @@
   ],
   "redirects": [
     {
+      "source": "/index",
+      "destination": "https://www.bashkaran.ch/",
+      "permanent": true
+    },
+    {
       "source": "/nutzungsbedingungen.html",
-      "destination": "/nutzungsbedingungen",
+      "destination": "https://www.bashkaran.ch/nutzungsbedingungen",
       "permanent": true
     },
     {
       "source": "/impressum.html",
-      "destination": "/impressum",
+      "destination": "https://www.bashkaran.ch/impressum",
       "permanent": true
     },
     {
       "source": "/kontakt.html",
-      "destination": "/kontakt",
+      "destination": "https://www.bashkaran.ch/kontakt",
       "permanent": true
     },
     {
       "source": "/portfolio.html",
-      "destination": "/portfolio",
+      "destination": "https://www.bashkaran.ch/portfolio",
       "permanent": true
     },
     {
       "source": "/vermietung",
-      "destination": "/",
+      "destination": "https://www.bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/ferienwohnungsmanagement",
-      "destination": "/",
+      "destination": "https://www.bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/ferienwohnungsmanagement.html",
-      "destination": "/",
+      "destination": "https://www.bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/ueber-uns.html",
-      "destination": "/ueber-uns",
+      "destination": "https://www.bashkaran.ch/ueber-uns",
       "permanent": true
     },
     {
       "source": "/vermietung.html",
-      "destination": "/",
+      "destination": "https://www.bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/datenschutz.html",
-      "destination": "/datenschutz",
+      "destination": "https://www.bashkaran.ch/datenschutz",
       "permanent": true
     },
     {
       "source": "/research/admin.html",
-      "destination": "/research/admin",
+      "destination": "https://www.bashkaran.ch/research/admin",
       "permanent": true
     },
     {
       "source": "/index.html",
-      "destination": "/",
+      "destination": "https://www.bashkaran.ch/",
       "permanent": true
     },
     {
       "source": "/research/index.html",
-      "destination": "/research",
+      "destination": "https://www.bashkaran.ch/research",
       "permanent": true
     },
     {
@@ -166,7 +171,7 @@
     },
     {
       "source": "/umfrage",
-      "destination": "/research",
+      "destination": "https://www.bashkaran.ch/research",
       "permanent": true
     }
   ],
